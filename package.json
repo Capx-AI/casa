@@ -28,6 +28,6 @@
     "attest": "node scripts/brain.mjs attest"
   },
   "devDependencies": {
-    "js-yaml": "^4.3.1"
+    "js-yaml": "^5.4.1"
   }
 }
