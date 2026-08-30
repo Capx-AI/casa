@@ -1,0 +1,10 @@
+{
+  "company_name": "Probe",
+  "confirmed": true,
+  "primary_type": "saas",
+  "secondary_type": "",
+  "traits": ["b2b", "high_acv", "takes_payments", "recurring_revenue", "builds_software", "technical_audience", "sends_email", "collects_user_data", "raising_capital"],
+  "icp": "Platform engineering teams at Series B and later companies",
+  "monetization": "subscription",
+  "one_liner": "Incident-replay tooling for platform engineering teams"
+}

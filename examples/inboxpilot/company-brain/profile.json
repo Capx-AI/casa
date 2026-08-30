@@ -1,0 +1,28 @@
+{
+  "company_name": "InboxPilot",
+  "confirmed": true,
+  "primary_type": "saas",
+  "secondary_type": "",
+  "traits": [
+    "builds_software",
+    "b2c",
+    "low_acv",
+    "recurring_revenue",
+    "self_serve_only",
+    "collects_user_data",
+    "sends_email",
+    "takes_payments",
+    "pre_idea_only"
+  ],
+  "icp": "Busy professionals drowning in long email threads",
+  "monetization": "subscription",
+  "one_liner": "A Chrome extension that summarizes long email threads and drafts replies for busy professionals",
+  "north_star": {
+    "growth": "mrr",
+    "retention": "sub_retention",
+    "guardrails": [
+      "ltv_cac",
+      "gross_margin"
+    ]
+  }
+}

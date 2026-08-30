@@ -1,0 +1,32 @@
+{
+  "completed": [
+    "opportunity-scan"
+  ],
+  "start_level": 0,
+  "binding_constraint": {
+    "archetype": "no_users",
+    "surface_ids": [
+      "first-users-traction",
+      "beachhead-selection",
+      "landing-page-cro",
+      "funnel-analysis",
+      "referral-and-virality-loops"
+    ],
+    "lead_departments": [
+      "Growth",
+      "Strategy"
+    ],
+    "win_definition": "100 paying subscribers at 8 dollars a month within 90 days",
+    "win_gap": 0
+  },
+  "loops": {
+    "weekly-retro": "2026-07-01",
+    "compliance-heartbeat": "2026-07-01",
+    "content-engine": "2026-07-01",
+    "weekly-pulse": "2026-07-01",
+    "customer-insight": "2026-07-01",
+    "sales-pipeline": "2026-07-01",
+    "financial-close": "2026-07-01",
+    "growth-experiment": "2026-07-01"
+  }
+}

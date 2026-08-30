@@ -1,0 +1,20 @@
+{
+  "default": "approve_first",
+  "departments": {
+    "Strategy": "approve_first",
+    "Brand": "approve_first",
+    "Product": "approve_first",
+    "Engineering": "approve_first",
+    "Data": "approve_first",
+    "Growth": "approve_first",
+    "Sales": "approve_first",
+    "Success": "approve_first",
+    "Finance": "approve_first"
+  },
+  "always_ask": [
+    "spend_money",
+    "go_public",
+    "merge_to_main",
+    "destructive"
+  ]
+}

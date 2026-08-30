@@ -1,0 +1,18 @@
+{
+  "_note": "Per-department autonomy dials. Everything defaults to approve_first so the Chief of Staff proposes and waits; a founder can set a department to 'auto' later for hands-off reversible work. casa-start rewrites `departments` per company from the derived set. `always_ask` actions require approval no matter how a department is dialed.",
+  "default": "approve_first",
+  "departments": {
+    "Strategy": "approve_first",
+    "Brand": "approve_first",
+    "Product": "approve_first",
+    "Engineering": "approve_first",
+    "Data": "approve_first",
+    "Growth": "approve_first",
+    "Sales": "approve_first",
+    "Success": "approve_first",
+    "Finance": "approve_first",
+    "Legal": "approve_first",
+    "Operations": "approve_first"
+  },
+  "always_ask": ["spend_money", "go_public", "merge_to_main", "destructive"]
+}

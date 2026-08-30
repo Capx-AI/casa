@@ -1,0 +1,4832 @@
+{
+  "business_profile": {
+    "company_name": "InboxPilot",
+    "confirmed": true,
+    "primary_type": "saas",
+    "secondary_type": "",
+    "traits": [
+      "builds_software",
+      "b2c",
+      "low_acv",
+      "recurring_revenue",
+      "self_serve_only",
+      "collects_user_data",
+      "sends_email",
+      "takes_payments",
+      "pre_idea_only"
+    ],
+    "icp": "Busy professionals drowning in long email threads",
+    "monetization": "subscription",
+    "one_liner": "A Chrome extension that summarizes long email threads and drafts replies for busy professionals",
+    "north_star": {
+      "growth": "mrr",
+      "retention": "sub_retention",
+      "guardrails": [
+        "ltv_cac",
+        "gross_margin"
+      ]
+    }
+  },
+  "current_level": 0,
+  "active_north_star": {
+    "band": "validation",
+    "metric": "validated_demand",
+    "label": "validated demand",
+    "mature_growth": "mrr",
+    "mature_growth_label": "MRR",
+    "mature_retention": "sub_retention",
+    "mature_retention_label": "subscription retention",
+    "guardrails": [
+      "ltv_cac",
+      "gross_margin"
+    ]
+  },
+  "mature_north_star": {
+    "growth": "mrr",
+    "retention": "sub_retention",
+    "guardrails": [
+      "ltv_cac",
+      "gross_margin"
+    ]
+  },
+  "binding_constraint": {
+    "archetype": "no_users",
+    "surface_ids": [
+      "first-users-traction",
+      "beachhead-selection",
+      "landing-page-cro",
+      "funnel-analysis",
+      "referral-and-virality-loops"
+    ],
+    "lead_departments": [
+      "Growth",
+      "Strategy"
+    ],
+    "win_definition": "100 paying subscribers at 8 dollars a month within 90 days",
+    "win_gap": 0
+  },
+  "constraint_missing": false,
+  "default_lead": null,
+  "member_count": 107,
+  "levels": [
+    {
+      "level": 0,
+      "name": "Ideation and Validation",
+      "nodes": [
+        {
+          "id": "problem-validation-interviews",
+          "title": "Problem Validation Interviews",
+          "level": 0,
+          "status": "ready",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "market-sizing-tam-sam-som",
+          "title": "Market Sizing (TAM/SAM/SOM)",
+          "level": 0,
+          "status": "ready",
+          "slack": 0.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "red-team-thesis",
+          "title": "Red-Team the Thesis",
+          "level": 0,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "problem-validation-interviews",
+            "market-sizing-tam-sam-som"
+          ],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "mvp-scoping",
+          "title": "MVP Scoping",
+          "level": 0,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "red-team-thesis"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "opportunity-scan",
+          "title": "Opportunity Scan",
+          "level": 0,
+          "status": "done",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "competitive-teardown",
+          "title": "Competitive Teardown",
+          "level": 0,
+          "status": "ready",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "jobs-to-be-done-extraction",
+          "title": "Jobs-to-be-Done Extraction",
+          "level": 0,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "why-now-memo",
+          "title": "Why-Now Memo",
+          "level": 0,
+          "status": "ready",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "name": "Commit and Incorporate",
+      "nodes": [
+        {
+          "id": "beachhead-selection",
+          "title": "Beachhead Selection",
+          "level": 1,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "problem-validation-interviews",
+            "market-sizing-tam-sam-som"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "positioning-canvas",
+          "title": "Positioning Canvas",
+          "level": 1,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "beachhead-selection"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "company-naming",
+          "title": "Company Naming",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "beachhead-selection"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "domain-acquisition",
+          "title": "Domain Acquisition",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Operations",
+          "depends_on": [
+            "company-naming"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "trademark-clearance",
+          "title": "Trademark Clearance",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "company-naming"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "category-design-decision",
+          "title": "Category Design Decision",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "positioning-canvas"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "willingness-to-pay-research",
+          "title": "Willingness-to-Pay Research",
+          "level": 1,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "problem-validation-interviews",
+            "icp-target-account-listing"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led"
+          ],
+          "stale": false
+        },
+        {
+          "id": "entity-formation",
+          "title": "Entity Formation",
+          "level": 1,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "founding-docs",
+          "title": "Founding Docs",
+          "level": 1,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "entity-formation"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "first-users-traction",
+          "title": "First Users by Hand",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "naming-and-brand-architecture",
+          "title": "Naming and Brand Architecture",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace",
+            "physical_goods",
+            "local"
+          ],
+          "stale": false
+        },
+        {
+          "id": "contractor-and-ip-assignment",
+          "title": "Contractor and IP Assignment Agreements",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace",
+            "physical_goods",
+            "local"
+          ],
+          "stale": false
+        },
+        {
+          "id": "revenue-model-selection",
+          "title": "Revenue Model Selection",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "S",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "name": "Product and Infra Foundation",
+      "nodes": [
+        {
+          "id": "pricing-research",
+          "title": "Pricing Research",
+          "level": 2,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "positioning-canvas"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "packaging-tier-design",
+          "title": "Packaging & Tier Design",
+          "level": 2,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "pricing-research"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "freemium-trial-decision",
+          "title": "Freemium / Trial Decision",
+          "level": 2,
+          "status": "blocked",
+          "slack": 1.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "pricing-research"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "tech-stack-selection",
+          "title": "Tech Stack Selection",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [
+            "mvp-scoping"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "hosting-deployment-setup",
+          "title": "Hosting & Deployment Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [
+            "tech-stack-selection"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "observability-setup",
+          "title": "Observability Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [
+            "hosting-deployment-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "incident-response",
+          "title": "Incident Response",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [
+            "observability-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "data-backup-recovery",
+          "title": "Data Backup & Recovery",
+          "level": 2,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [
+            "hosting-deployment-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "brand-positioning-statement",
+          "title": "Brand Positioning Statement",
+          "level": 2,
+          "status": "blocked",
+          "slack": 4.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "mvp-scoping"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "tone-of-voice-guide",
+          "title": "Tone of Voice Guide",
+          "level": 2,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "messaging-pillars-and-proof",
+          "title": "Messaging Pillars and Proof",
+          "level": 2,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        },
+        {
+          "id": "analytics-stack-setup",
+          "title": "Analytics Stack Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "event-taxonomy-design",
+          "title": "Event Taxonomy Design",
+          "level": 2,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "seo-keyword-research",
+          "title": "SEO Keyword Research",
+          "level": 2,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "email-deliverability-setup",
+          "title": "Email Deliverability Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "security-baseline",
+          "title": "Security Baseline",
+          "level": 2,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "pricing-smoke-test",
+          "title": "Pricing Smoke Test",
+          "level": 2,
+          "status": "blocked",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "icp-target-account-listing"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "transactional",
+            "self_serve"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "name": "Build and Pre-launch",
+      "nodes": [
+        {
+          "id": "pricing-page-copy-layout",
+          "title": "Pricing Page Copy & Layout",
+          "level": 3,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "pricing-research",
+            "packaging-tier-design",
+            "positioning-canvas"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "prd-drafting",
+          "title": "PRD Drafting",
+          "level": 3,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "mvp-scoping"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "first-run-aha-experience",
+          "title": "First-Run Aha Experience",
+          "level": 3,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "prd-drafting"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "release-changelog-cadence",
+          "title": "Release & Changelog Cadence",
+          "level": 3,
+          "status": "blocked",
+          "slack": 3.7,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [
+            "hosting-deployment-setup"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "visual-identity-brief",
+          "title": "Visual Identity Brief",
+          "level": 3,
+          "status": "blocked",
+          "slack": 4.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "category-design-and-pov",
+          "title": "Category Design and Point of View",
+          "level": 3,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement",
+            "problem-validation-interviews"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        },
+        {
+          "id": "brand-guidelines-system",
+          "title": "Brand Guidelines System",
+          "level": 3,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace",
+            "physical_goods",
+            "local"
+          ],
+          "stale": false
+        },
+        {
+          "id": "long-form-blog-post",
+          "title": "Long-form Blog Post",
+          "level": 3,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "welcome-email-sequence",
+          "title": "Welcome Email Sequence",
+          "level": 3,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "email-deliverability-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "onboarding-flow-design",
+          "title": "Onboarding Flow Design",
+          "level": 3,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "pillar-cluster-content",
+          "title": "Pillar + Cluster Content",
+          "level": 3,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "landing-page-cro",
+          "title": "Landing Page CRO",
+          "level": 3,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "tos-and-privacy-policy",
+          "title": "ToS & Privacy Policy",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "entity-formation"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "content-calendar",
+          "title": "Content Calendar",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "transactional-emails",
+          "title": "Transactional Emails",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "email-deliverability-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "community-seeding",
+          "title": "Community Seeding",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "youtube-strategy",
+          "title": "YouTube Strategy",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "feature-prioritization",
+          "title": "Feature Prioritization",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Product",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "technical-seo-audit",
+          "title": "Technical SEO Audit",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "newsletter-growth",
+          "title": "Newsletter Growth",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "twitter-x-playbook",
+          "title": "Twitter / X Content Engine",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "reddit-marketing",
+          "title": "Reddit Marketing",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "data-processing-and-dpa",
+          "title": "Data Processing Agreement and Subprocessor Package",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "icp-target-account-listing"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "sales_led",
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "usability-testing-protocol",
+          "title": "Usability Testing Protocol",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Product",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "name": "Launch",
+      "nodes": [
+        {
+          "id": "launch-plan-t90",
+          "title": "Launch Plan (T-90)",
+          "level": 4,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "positioning-canvas",
+            "packaging-tier-design",
+            "pricing-page-copy-layout",
+            "freemium-trial-decision"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "product-hunt-launch",
+          "title": "Product Hunt Launch",
+          "level": 4,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "launch-plan-t90"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "activation-rate-optimization",
+          "title": "Activation Rate Optimization",
+          "level": 4,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "event-taxonomy-design",
+            "first-run-aha-experience"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "founder-brand-and-thought-leadership",
+          "title": "Founder Brand and Thought Leadership",
+          "level": 4,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement",
+            "icp-target-account-listing"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        },
+        {
+          "id": "plg-instrumentation-and-pqls",
+          "title": "PLG Instrumentation and PQL Scoring",
+          "level": 4,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "beta-program-management",
+          "title": "Beta Program Management",
+          "level": 4,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "onboarding-flow-design"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "ga4-reading-playbook",
+          "title": "GA4 Reading Playbook",
+          "level": 4,
+          "status": "blocked",
+          "slack": 8.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "podcast-tour",
+          "title": "Podcast Tour",
+          "level": 4,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "pr-press-launch",
+          "title": "PR & Press Launch",
+          "level": 4,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "ab-testing-protocol",
+          "title": "A/B Testing Protocol",
+          "level": 4,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "app-store-optimization",
+          "title": "App Store Optimization and Mobile Growth",
+          "level": 4,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "name": "First Customers and PMF",
+      "nodes": [
+        {
+          "id": "discount-promo-policy",
+          "title": "Discount & Promo Policy",
+          "level": 5,
+          "status": "blocked",
+          "slack": 3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "pricing-research",
+            "packaging-tier-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "north-star-metric",
+          "title": "North Star Metric Definition",
+          "level": 5,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "ceo-dashboard-build",
+          "title": "CEO Dashboard Build",
+          "level": 5,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "north-star-metric"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "weekly-business-review",
+          "title": "Weekly Business Review",
+          "level": 5,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Operations",
+          "depends_on": [
+            "analytics-stack-setup",
+            "north-star-metric",
+            "ceo-dashboard-build"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "funnel-analysis",
+          "title": "Funnel Analysis",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "cohort-retention-analysis",
+          "title": "Cohort & Retention Analysis",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "link-building",
+          "title": "Link Building",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "long-form-blog-post"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "nurture-campaign",
+          "title": "Nurture Campaign",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "welcome-email-sequence"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "win-back-campaign",
+          "title": "Win-back Campaign",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "welcome-email-sequence"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "unit-economics",
+          "title": "Unit Economics",
+          "level": 5,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "dunning-and-involuntary-churn",
+          "title": "Dunning & Involuntary Churn Recovery",
+          "level": 5,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "support-workflow",
+          "title": "Support Workflow",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "churn-diagnosis-winback",
+          "title": "Churn Diagnosis & Win-back",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [
+            "contract-close-playbook",
+            "support-workflow"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "nps-csat-program",
+          "title": "NPS / CSAT Program",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "case-study-testimonial-pipeline",
+          "title": "Case Study & Testimonial Pipeline",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "nps-csat-program"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "referral-program",
+          "title": "Referral Program",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "paywall-and-pricing-experiments",
+          "title": "Paywall and Pricing Experiments",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "referral-and-virality-loops",
+          "title": "Referral and Virality Loops",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "lifecycle-and-retention-email",
+          "title": "Lifecycle and Retention Email Program",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "self_serve",
+            "transactional"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "name": "Scale Acquisition",
+      "nodes": [
+        {
+          "id": "renewal-and-retention-playbook",
+          "title": "Renewal and Retention Playbook",
+          "level": 6,
+          "status": "blocked",
+          "slack": 4.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [
+            "pricing-research"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "sales_led"
+          ],
+          "stale": false
+        },
+        {
+          "id": "attribution-modeling",
+          "title": "Attribution Modeling",
+          "level": 6,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "google-ads",
+          "title": "Google Ads",
+          "level": 6,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "meta-ads",
+          "title": "Meta Ads",
+          "level": 6,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "programmatic-seo",
+          "title": "Programmatic SEO",
+          "level": 6,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "affiliate-program-setup",
+          "title": "Affiliate Program Setup",
+          "level": 6,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "landing-page-cro"
+          ],
+          "criticality": "optional",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "influencer-partnerships",
+          "title": "Influencer Partnerships",
+          "level": 6,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "landing-page-cro"
+          ],
+          "criticality": "optional",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "retargeting",
+          "title": "Retargeting",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "landing-page-cro"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "growth-loop-design",
+          "title": "Growth Loop Design",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "pricing-packaging-experimentation",
+          "title": "Pricing and Packaging Experimentation",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "hiring-and-org-scaling",
+          "title": "Hiring and Org Scaling",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Operations",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "creative-testing",
+          "title": "Creative Testing",
+          "level": 6,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "account-expansion-and-upsell",
+          "title": "Account Expansion and Upsell",
+          "level": 6,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Sales",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "sales_led"
+          ],
+          "stale": false
+        },
+        {
+          "id": "customer-advisory-board",
+          "title": "Customer Advisory Board",
+          "level": 6,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [
+            "icp-target-account-listing"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "name": "Growth Finance and Fundraise",
+      "nodes": [
+        {
+          "id": "financial-model-forecast",
+          "title": "Financial Model and Forecast",
+          "level": 8,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [
+            "unit-economics"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    }
+  ],
+  "departments": [
+    {
+      "department": "Brand",
+      "nodes": [
+        {
+          "id": "naming-and-brand-architecture",
+          "title": "Naming and Brand Architecture",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace",
+            "physical_goods",
+            "local"
+          ],
+          "stale": false
+        },
+        {
+          "id": "brand-positioning-statement",
+          "title": "Brand Positioning Statement",
+          "level": 2,
+          "status": "blocked",
+          "slack": 4.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "mvp-scoping"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "tone-of-voice-guide",
+          "title": "Tone of Voice Guide",
+          "level": 2,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "messaging-pillars-and-proof",
+          "title": "Messaging Pillars and Proof",
+          "level": 2,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        },
+        {
+          "id": "visual-identity-brief",
+          "title": "Visual Identity Brief",
+          "level": 3,
+          "status": "blocked",
+          "slack": 4.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "category-design-and-pov",
+          "title": "Category Design and Point of View",
+          "level": 3,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement",
+            "problem-validation-interviews"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        },
+        {
+          "id": "brand-guidelines-system",
+          "title": "Brand Guidelines System",
+          "level": 3,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace",
+            "physical_goods",
+            "local"
+          ],
+          "stale": false
+        },
+        {
+          "id": "founder-brand-and-thought-leadership",
+          "title": "Founder Brand and Thought Leadership",
+          "level": 4,
+          "status": "blocked",
+          "slack": 4.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Brand",
+          "depends_on": [
+            "brand-positioning-statement",
+            "icp-target-account-listing"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Data",
+      "nodes": [
+        {
+          "id": "event-taxonomy-design",
+          "title": "Event Taxonomy Design",
+          "level": 2,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "activation-rate-optimization",
+          "title": "Activation Rate Optimization",
+          "level": 4,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "event-taxonomy-design",
+            "first-run-aha-experience"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "plg-instrumentation-and-pqls",
+          "title": "PLG Instrumentation and PQL Scoring",
+          "level": 4,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "ga4-reading-playbook",
+          "title": "GA4 Reading Playbook",
+          "level": 4,
+          "status": "blocked",
+          "slack": 8.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "ab-testing-protocol",
+          "title": "A/B Testing Protocol",
+          "level": 4,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "north-star-metric",
+          "title": "North Star Metric Definition",
+          "level": 5,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "ceo-dashboard-build",
+          "title": "CEO Dashboard Build",
+          "level": 5,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "north-star-metric"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "funnel-analysis",
+          "title": "Funnel Analysis",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "cohort-retention-analysis",
+          "title": "Cohort & Retention Analysis",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "attribution-modeling",
+          "title": "Attribution Modeling",
+          "level": 6,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Data",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Engineering",
+      "nodes": [
+        {
+          "id": "tech-stack-selection",
+          "title": "Tech Stack Selection",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [
+            "mvp-scoping"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "hosting-deployment-setup",
+          "title": "Hosting & Deployment Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [
+            "tech-stack-selection"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "observability-setup",
+          "title": "Observability Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [
+            "hosting-deployment-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "incident-response",
+          "title": "Incident Response",
+          "level": 2,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [
+            "observability-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "data-backup-recovery",
+          "title": "Data Backup & Recovery",
+          "level": 2,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [
+            "hosting-deployment-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "analytics-stack-setup",
+          "title": "Analytics Stack Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "email-deliverability-setup",
+          "title": "Email Deliverability Setup",
+          "level": 2,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "security-baseline",
+          "title": "Security Baseline",
+          "level": 2,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Engineering",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "release-changelog-cadence",
+          "title": "Release & Changelog Cadence",
+          "level": 3,
+          "status": "blocked",
+          "slack": 3.7,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Engineering",
+          "depends_on": [
+            "hosting-deployment-setup"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Finance",
+      "nodes": [
+        {
+          "id": "willingness-to-pay-research",
+          "title": "Willingness-to-Pay Research",
+          "level": 1,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "problem-validation-interviews",
+            "icp-target-account-listing"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led"
+          ],
+          "stale": false
+        },
+        {
+          "id": "revenue-model-selection",
+          "title": "Revenue Model Selection",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "S",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        },
+        {
+          "id": "pricing-research",
+          "title": "Pricing Research",
+          "level": 2,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "positioning-canvas"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "packaging-tier-design",
+          "title": "Packaging & Tier Design",
+          "level": 2,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "pricing-research"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "freemium-trial-decision",
+          "title": "Freemium / Trial Decision",
+          "level": 2,
+          "status": "blocked",
+          "slack": 1.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "pricing-research"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "pricing-smoke-test",
+          "title": "Pricing Smoke Test",
+          "level": 2,
+          "status": "blocked",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "icp-target-account-listing"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "transactional",
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "discount-promo-policy",
+          "title": "Discount & Promo Policy",
+          "level": 5,
+          "status": "blocked",
+          "slack": 3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Finance",
+          "depends_on": [
+            "pricing-research",
+            "packaging-tier-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "unit-economics",
+          "title": "Unit Economics",
+          "level": 5,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "dunning-and-involuntary-churn",
+          "title": "Dunning & Involuntary Churn Recovery",
+          "level": 5,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [
+            "analytics-stack-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "pricing-packaging-experimentation",
+          "title": "Pricing and Packaging Experimentation",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "financial-model-forecast",
+          "title": "Financial Model and Forecast",
+          "level": 8,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Finance",
+          "depends_on": [
+            "unit-economics"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Growth",
+      "nodes": [
+        {
+          "id": "first-users-traction",
+          "title": "First Users by Hand",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "seo-keyword-research",
+          "title": "SEO Keyword Research",
+          "level": 2,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "pricing-page-copy-layout",
+          "title": "Pricing Page Copy & Layout",
+          "level": 3,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "pricing-research",
+            "packaging-tier-design",
+            "positioning-canvas"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "long-form-blog-post",
+          "title": "Long-form Blog Post",
+          "level": 3,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "welcome-email-sequence",
+          "title": "Welcome Email Sequence",
+          "level": 3,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "email-deliverability-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "pillar-cluster-content",
+          "title": "Pillar + Cluster Content",
+          "level": 3,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "landing-page-cro",
+          "title": "Landing Page CRO",
+          "level": 3,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "content-calendar",
+          "title": "Content Calendar",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "youtube-strategy",
+          "title": "YouTube Strategy",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "technical-seo-audit",
+          "title": "Technical SEO Audit",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "newsletter-growth",
+          "title": "Newsletter Growth",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "twitter-x-playbook",
+          "title": "Twitter / X Content Engine",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "reddit-marketing",
+          "title": "Reddit Marketing",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "launch-plan-t90",
+          "title": "Launch Plan (T-90)",
+          "level": 4,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "positioning-canvas",
+            "packaging-tier-design",
+            "pricing-page-copy-layout",
+            "freemium-trial-decision"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "product-hunt-launch",
+          "title": "Product Hunt Launch",
+          "level": 4,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "launch-plan-t90"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "podcast-tour",
+          "title": "Podcast Tour",
+          "level": 4,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "optional",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "pr-press-launch",
+          "title": "PR & Press Launch",
+          "level": 4,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "app-store-optimization",
+          "title": "App Store Optimization and Mobile Growth",
+          "level": 4,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "link-building",
+          "title": "Link Building",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "long-form-blog-post"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "nurture-campaign",
+          "title": "Nurture Campaign",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "welcome-email-sequence"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "win-back-campaign",
+          "title": "Win-back Campaign",
+          "level": 5,
+          "status": "blocked",
+          "slack": 7.7,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "welcome-email-sequence"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "case-study-testimonial-pipeline",
+          "title": "Case Study & Testimonial Pipeline",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "nps-csat-program"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "referral-program",
+          "title": "Referral Program",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "paywall-and-pricing-experiments",
+          "title": "Paywall and Pricing Experiments",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "referral-and-virality-loops",
+          "title": "Referral and Virality Loops",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "google-ads",
+          "title": "Google Ads",
+          "level": 6,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "meta-ads",
+          "title": "Meta Ads",
+          "level": 6,
+          "status": "blocked",
+          "slack": 6.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "analytics-stack-setup",
+            "event-taxonomy-design"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "programmatic-seo",
+          "title": "Programmatic SEO",
+          "level": 6,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Growth",
+          "depends_on": [
+            "seo-keyword-research"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "affiliate-program-setup",
+          "title": "Affiliate Program Setup",
+          "level": 6,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "landing-page-cro"
+          ],
+          "criticality": "optional",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "influencer-partnerships",
+          "title": "Influencer Partnerships",
+          "level": 6,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "landing-page-cro"
+          ],
+          "criticality": "optional",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "retargeting",
+          "title": "Retargeting",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [
+            "landing-page-cro"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "growth-loop-design",
+          "title": "Growth Loop Design",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "creative-testing",
+          "title": "Creative Testing",
+          "level": 6,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Growth",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Legal",
+      "nodes": [
+        {
+          "id": "trademark-clearance",
+          "title": "Trademark Clearance",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "company-naming"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "entity-formation",
+          "title": "Entity Formation",
+          "level": 1,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "founding-docs",
+          "title": "Founding Docs",
+          "level": 1,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "entity-formation"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "contractor-and-ip-assignment",
+          "title": "Contractor and IP Assignment Agreements",
+          "level": 1,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "transactional",
+            "self_serve",
+            "sales_led",
+            "marketplace",
+            "physical_goods",
+            "local"
+          ],
+          "stale": false
+        },
+        {
+          "id": "tos-and-privacy-policy",
+          "title": "ToS & Privacy Policy",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "entity-formation"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "data-processing-and-dpa",
+          "title": "Data Processing Agreement and Subprocessor Package",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": true,
+          "recurring": false,
+          "department": "Legal",
+          "depends_on": [
+            "icp-target-account-listing"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "sales_led",
+            "self_serve"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Operations",
+      "nodes": [
+        {
+          "id": "domain-acquisition",
+          "title": "Domain Acquisition",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Operations",
+          "depends_on": [
+            "company-naming"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "weekly-business-review",
+          "title": "Weekly Business Review",
+          "level": 5,
+          "status": "blocked",
+          "slack": 6.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Operations",
+          "depends_on": [
+            "analytics-stack-setup",
+            "north-star-metric",
+            "ceo-dashboard-build"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "hiring-and-org-scaling",
+          "title": "Hiring and Org Scaling",
+          "level": 6,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Operations",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Product",
+      "nodes": [
+        {
+          "id": "mvp-scoping",
+          "title": "MVP Scoping",
+          "level": 0,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "red-team-thesis"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "prd-drafting",
+          "title": "PRD Drafting",
+          "level": 3,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "mvp-scoping"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "first-run-aha-experience",
+          "title": "First-Run Aha Experience",
+          "level": 3,
+          "status": "blocked",
+          "slack": 3.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "prd-drafting"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "onboarding-flow-design",
+          "title": "Onboarding Flow Design",
+          "level": 3,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "self_serve"
+          ],
+          "stale": false
+        },
+        {
+          "id": "transactional-emails",
+          "title": "Transactional Emails",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "email-deliverability-setup"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "feature-prioritization",
+          "title": "Feature Prioritization",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Product",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "usability-testing-protocol",
+          "title": "Usability Testing Protocol",
+          "level": 3,
+          "status": "blocked",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Product",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "beta-program-management",
+          "title": "Beta Program Management",
+          "level": 4,
+          "status": "blocked",
+          "slack": 8.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Product",
+          "depends_on": [
+            "onboarding-flow-design"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Sales",
+      "nodes": [
+        {
+          "id": "account-expansion-and-upsell",
+          "title": "Account Expansion and Upsell",
+          "level": 6,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Sales",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "sales_led"
+          ],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Strategy",
+      "nodes": [
+        {
+          "id": "problem-validation-interviews",
+          "title": "Problem Validation Interviews",
+          "level": 0,
+          "status": "ready",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "L",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "market-sizing-tam-sam-som",
+          "title": "Market Sizing (TAM/SAM/SOM)",
+          "level": 0,
+          "status": "ready",
+          "slack": 0.4,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "red-team-thesis",
+          "title": "Red-Team the Thesis",
+          "level": 0,
+          "status": "blocked",
+          "slack": 2.1,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "problem-validation-interviews",
+            "market-sizing-tam-sam-som"
+          ],
+          "criticality": "existential",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "opportunity-scan",
+          "title": "Opportunity Scan",
+          "level": 0,
+          "status": "done",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "competitive-teardown",
+          "title": "Competitive Teardown",
+          "level": 0,
+          "status": "ready",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "jobs-to-be-done-extraction",
+          "title": "Jobs-to-be-Done Extraction",
+          "level": 0,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "why-now-memo",
+          "title": "Why-Now Memo",
+          "level": 0,
+          "status": "ready",
+          "slack": 10.6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "S",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "beachhead-selection",
+          "title": "Beachhead Selection",
+          "level": 1,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "problem-validation-interviews",
+            "market-sizing-tam-sam-som"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "positioning-canvas",
+          "title": "Positioning Canvas",
+          "level": 1,
+          "status": "blocked",
+          "slack": 0,
+          "on_critical_path": true,
+          "leverage": "critical",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "beachhead-selection"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "company-naming",
+          "title": "Company Naming",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "beachhead-selection"
+          ],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "category-design-decision",
+          "title": "Category Design Decision",
+          "level": 1,
+          "status": "blocked",
+          "slack": 6,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": false,
+          "department": "Strategy",
+          "depends_on": [
+            "positioning-canvas"
+          ],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        }
+      ]
+    },
+    {
+      "department": "Success",
+      "nodes": [
+        {
+          "id": "community-seeding",
+          "title": "Community Seeding",
+          "level": 3,
+          "status": "blocked",
+          "slack": 9.9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "L",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "support-workflow",
+          "title": "Support Workflow",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [],
+          "stale": false
+        },
+        {
+          "id": "churn-diagnosis-winback",
+          "title": "Churn Diagnosis & Win-back",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [
+            "contract-close-playbook",
+            "support-workflow"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "nps-csat-program",
+          "title": "NPS / CSAT Program",
+          "level": 5,
+          "status": "blocked",
+          "slack": 9,
+          "on_critical_path": false,
+          "leverage": "med",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring"
+          ],
+          "stale": false
+        },
+        {
+          "id": "lifecycle-and-retention-email",
+          "title": "Lifecycle and Retention Email Program",
+          "level": 5,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "self_serve",
+            "transactional"
+          ],
+          "stale": false
+        },
+        {
+          "id": "renewal-and-retention-playbook",
+          "title": "Renewal and Retention Playbook",
+          "level": 6,
+          "status": "blocked",
+          "slack": 4.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": false,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [
+            "pricing-research"
+          ],
+          "criticality": "core",
+          "model_fit": [
+            "recurring",
+            "sales_led"
+          ],
+          "stale": false
+        },
+        {
+          "id": "customer-advisory-board",
+          "title": "Customer Advisory Board",
+          "level": 6,
+          "status": "blocked",
+          "slack": 10.3,
+          "on_critical_path": false,
+          "leverage": "high",
+          "effort": "M",
+          "human_gate": true,
+          "blocks_revenue": false,
+          "recurring": true,
+          "department": "Success",
+          "depends_on": [
+            "icp-target-account-listing"
+          ],
+          "criticality": "growth",
+          "model_fit": [
+            "recurring",
+            "sales_led",
+            "marketplace"
+          ],
+          "stale": false
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": "mixpanel-reading-playbook",
+      "reason": "needs trait uses_mixpanel"
+    },
+    {
+      "id": "hacker-news-launch",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "tiktok-growth",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "linkedin-organic",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "instagram-growth",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "linkedin-ads",
+      "reason": "needs trait b2b,high_acv"
+    },
+    {
+      "id": "integration-co-marketing",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "icp-target-account-listing",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "outbound-email-sequences",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "discovery-call-framework",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "demo-script",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "objection-handling-library",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "contract-close-playbook",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "fundraise-deck-investor-outreach",
+      "reason": "needs trait raising_capital"
+    },
+    {
+      "id": "human-in-the-loop-approval-gates",
+      "reason": "needs trait runs_agents"
+    },
+    {
+      "id": "marketplace-trust-and-safety",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "marketplace-liquidity-balancing",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "local-google-business-profile",
+      "reason": "needs trait local_service_only"
+    },
+    {
+      "id": "local-reviews-reputation",
+      "reason": "needs trait local_service_only"
+    },
+    {
+      "id": "b2b-soc2-readiness",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "pre-seed-fundraise",
+      "reason": "needs trait raising_capital"
+    },
+    {
+      "id": "supplier-sourcing-and-cogs",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "inventory-and-fulfillment-setup",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "shipping-returns-policy",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "repeat-purchase-and-aov",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "merchandising-and-catalog",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "hardware-certification-and-compliance",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "kyc-aml-program",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "smart-contract-audit",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "token-and-licensing-strategy",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "hardware-prototyping-and-dfm",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "contract-manufacturing-setup",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "marketplace-supply-acquisition",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "ad-revenue-and-yield",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "hardware-preorder-demand-validation",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "services-delivery-and-utilization",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "onchain-payment-and-stablecoin-integration",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "wallet-onboarding-ux",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "tokenomics-design",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "onchain-community-and-incentive-growth",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "onchain-analytics-and-attribution",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "protocol-security-monitoring",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "treasury-and-stablecoin-runway",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "open-source-strategy",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "api-and-sdk-design",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "developer-docs-and-dx",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "developer-relations-and-devrel",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "developer-community-and-contributors",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "bottom-up-plg-to-sales-handoff",
+      "reason": "needs trait technical_audience"
+    },
+    {
+      "id": "firmware-and-ota-updates",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "hardware-qa-and-reliability",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "retail-and-channel-distribution",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "warranty-and-rma-operations",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "spare-parts-and-aftermarket",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "in-app-purchase-and-store-economics",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "mobile-lifecycle-and-push",
+      "reason": "type mismatch"
+    },
+    {
+      "id": "pre-sales-and-letters-of-intent",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "design-partner-program",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "customer-onboarding-success",
+      "reason": "excluded by self_serve_only"
+    },
+    {
+      "id": "lead-qualification-framework",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "sales-pipeline-and-crm-hygiene",
+      "reason": "needs trait b2b"
+    },
+    {
+      "id": "regulatory-licensing-roadmap",
+      "reason": "needs trait regulated"
+    }
+  ]
+}

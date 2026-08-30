@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+terraform.tfvars
+.terraform
+.terraform.lock.hcl
+crash.log
+tfplan
+*.tfplan
+*.tfstate
+*.tfstate.*
+caf/fixtures/golden/
+caf/fixtures/adversarial/

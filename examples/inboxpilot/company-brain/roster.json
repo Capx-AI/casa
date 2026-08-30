@@ -1,0 +1,31 @@
+{
+  "departments": [
+    "Strategy",
+    "Brand",
+    "Product",
+    "Engineering",
+    "Data",
+    "Growth",
+    "Sales",
+    "Success",
+    "Finance"
+  ],
+  "leads": [
+    "Growth",
+    "Strategy"
+  ],
+  "operators": [
+    "casa-analyst",
+    "casa-brand",
+    "casa-engineer",
+    "casa-finance",
+    "casa-growth",
+    "casa-lifecycle",
+    "casa-marketer",
+    "casa-product",
+    "casa-researcher",
+    "casa-sales",
+    "casa-strategist",
+    "casa-success"
+  ]
+}

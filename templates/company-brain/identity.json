@@ -1,0 +1,11 @@
+{
+  "caf_version": "1.1.0",
+  "company_pubkey": null,
+  "harness": {
+    "name": "capx-casa",
+    "version": "4.1.0"
+  },
+  "driver_harness": null,
+  "brain_schema_version": "2026-07-09",
+  "created_at": null
+}

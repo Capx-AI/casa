@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capx.ai/caf/1.1.0/ledger-event.schema.json",
+  "title": "CAF disclosed ledger event",
+  "type": "object",
+  "required": [
+    "ts",
+    "id",
+    "task",
+    "status",
+    "kind"
+  ],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "pattern": "Z$"
+    },
+    "id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "task",
+        "playbook"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "started",
+        "running",
+        "blocked",
+        "done",
+        "merged",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "task": {
+      "type": "string"
+    },
+    "dept": {
+      "type": "string"
+    },
+    "agent": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "criticality": {
+      "type": "string",
+      "enum": [
+        "existential",
+        "core",
+        "growth",
+        "optional"
+      ]
+    },
+    "artifact": {
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rubric_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "decision": {
+      "type": "string"
+    }
+  }
+}

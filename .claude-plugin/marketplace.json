@@ -1,0 +1,18 @@
+{
+  "name": "capx-casa",
+  "description": "The official marketplace for the open-source Capx Casa company-building plugin.",
+  "owner": {
+    "name": "Capx",
+    "url": "https://capx.ai"
+  },
+  "plugins": [
+    {
+      "name": "capx-casa",
+      "source": "./",
+      "version": "0.2.0",
+      "description": "The open control plane for running a company from your terminal: departments, operator agents, parallel dispatch, and a Chief of Staff.",
+      "license": "MIT",
+      "category": "business"
+    }
+  ]
+}

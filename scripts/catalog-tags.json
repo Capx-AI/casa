@@ -1,0 +1,1288 @@
+[
+  {
+    "id": "opportunity-scan",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "problem-validation-interviews",
+    "department": "Strategy",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "competitive-teardown",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "market-sizing-tam-sam-som",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "jobs-to-be-done-extraction",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "red-team-thesis",
+    "department": "Strategy",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "why-now-memo",
+    "department": "Strategy",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "beachhead-selection",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "company-naming",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "domain-acquisition",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "trademark-clearance",
+    "department": "Legal",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "entity-formation",
+    "department": "Legal",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "founding-docs",
+    "department": "Legal",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "tos-and-privacy-policy",
+    "department": "Legal",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "brand-positioning-statement",
+    "department": "Brand",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "visual-identity-brief",
+    "department": "Brand",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "tone-of-voice-guide",
+    "department": "Brand",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "mvp-scoping",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "tech-stack-selection",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "prd-drafting",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "feature-prioritization",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "onboarding-flow-design",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "usability-testing-protocol",
+    "department": "Product",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "beta-program-management",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "release-changelog-cadence",
+    "department": "Engineering",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "hosting-deployment-setup",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "observability-setup",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "incident-response",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "security-baseline",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "data-backup-recovery",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "analytics-stack-setup",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "event-taxonomy-design",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "north-star-metric",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "funnel-analysis",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "cohort-retention-analysis",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "recurring"
+    ]
+  },
+  {
+    "id": "attribution-modeling",
+    "department": "Data",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "ceo-dashboard-build",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "ga4-reading-playbook",
+    "department": "Data",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "mixpanel-reading-playbook",
+    "department": "Data",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "weekly-business-review",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "pricing-research",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "packaging-tier-design",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "pricing-page-copy-layout",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "freemium-trial-decision",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "discount-promo-policy",
+    "department": "Finance",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "positioning-canvas",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "category-design-decision",
+    "department": "Strategy",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "launch-plan-t90",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "product-hunt-launch",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "hacker-news-launch",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "pr-press-launch",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "podcast-tour",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "community-seeding",
+    "department": "Success",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "seo-keyword-research",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "content-calendar",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "pillar-cluster-content",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "long-form-blog-post",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "programmatic-seo",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "technical-seo-audit",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "link-building",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "newsletter-growth",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "youtube-strategy",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "tiktok-growth",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "twitter-x-playbook",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "linkedin-organic",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "instagram-growth",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "reddit-marketing",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "google-ads",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "meta-ads",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "linkedin-ads",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "retargeting",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "creative-testing",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "landing-page-cro",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "affiliate-program-setup",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "influencer-partnerships",
+    "department": "Growth",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "integration-co-marketing",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "referral-program",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "welcome-email-sequence",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "nurture-campaign",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "win-back-campaign",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "transactional-emails",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "email-deliverability-setup",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "icp-target-account-listing",
+    "department": "Sales",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "outbound-email-sequences",
+    "department": "Sales",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "discovery-call-framework",
+    "department": "Sales",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "demo-script",
+    "department": "Sales",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "objection-handling-library",
+    "department": "Sales",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "contract-close-playbook",
+    "department": "Sales",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": [
+      "sales_led"
+    ]
+  },
+  {
+    "id": "support-workflow",
+    "department": "Success",
+    "criticality": "core",
+    "existential_at": [
+      "revenue"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "churn-diagnosis-winback",
+    "department": "Success",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "recurring"
+    ]
+  },
+  {
+    "id": "nps-csat-program",
+    "department": "Success",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "recurring"
+    ]
+  },
+  {
+    "id": "case-study-testimonial-pipeline",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "ab-testing-protocol",
+    "department": "Data",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "growth-loop-design",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "pricing-packaging-experimentation",
+    "department": "Finance",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "financial-model-forecast",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "unit-economics",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "fundraise-deck-investor-outreach",
+    "department": "Finance",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "human-in-the-loop-approval-gates",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "marketplace-trust-and-safety",
+    "department": "Operations",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": [
+      "marketplace"
+    ]
+  },
+  {
+    "id": "marketplace-liquidity-balancing",
+    "department": "Operations",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": [
+      "marketplace"
+    ]
+  },
+  {
+    "id": "local-google-business-profile",
+    "department": "Growth",
+    "criticality": "existential",
+    "existential_at": [],
+    "model_fit": [
+      "local"
+    ]
+  },
+  {
+    "id": "local-reviews-reputation",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "local"
+    ]
+  },
+  {
+    "id": "b2b-soc2-readiness",
+    "department": "Legal",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "app-store-optimization",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "pre-seed-fundraise",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [
+      "landing",
+      "building",
+      "launched"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "supplier-sourcing-and-cogs",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "inventory-and-fulfillment-setup",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "shipping-returns-policy",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "repeat-purchase-and-aov",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "transactional",
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "merchandising-and-catalog",
+    "department": "Product",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "activation-rate-optimization",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [
+      "launched"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "first-run-aha-experience",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "hardware-certification-and-compliance",
+    "department": "Legal",
+    "criticality": "existential",
+    "existential_at": [
+      "launched",
+      "revenue"
+    ],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "kyc-aml-program",
+    "department": "Legal",
+    "criticality": "existential",
+    "existential_at": [
+      "launched",
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "transactional"
+    ]
+  },
+  {
+    "id": "smart-contract-audit",
+    "department": "Engineering",
+    "criticality": "existential",
+    "existential_at": [
+      "building",
+      "launched",
+      "revenue"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "token-and-licensing-strategy",
+    "department": "Legal",
+    "criticality": "core",
+    "existential_at": [
+      "scaling"
+    ],
+    "model_fit": [
+      "transactional"
+    ]
+  },
+  {
+    "id": "hardware-prototyping-and-dfm",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "contract-manufacturing-setup",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "dunning-and-involuntary-churn",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "recurring"
+    ]
+  },
+  {
+    "id": "marketplace-supply-acquisition",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [],
+    "model_fit": [
+      "marketplace"
+    ]
+  },
+  {
+    "id": "ad-revenue-and-yield",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [
+      "launched",
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "hardware-preorder-demand-validation",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [
+      "landing",
+      "building"
+    ],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "hiring-and-org-scaling",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "account-expansion-and-upsell",
+    "department": "Sales",
+    "criticality": "core",
+    "existential_at": [
+      "scaling"
+    ],
+    "model_fit": [
+      "recurring",
+      "sales_led"
+    ]
+  },
+  {
+    "id": "services-delivery-and-utilization",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "onchain-payment-and-stablecoin-integration",
+    "department": "Engineering",
+    "criticality": "existential",
+    "existential_at": [
+      "building",
+      "launched",
+      "revenue"
+    ],
+    "model_fit": [
+      "transactional"
+    ]
+  },
+  {
+    "id": "wallet-onboarding-ux",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [
+      "launched",
+      "revenue"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "tokenomics-design",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [
+      "launched",
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "onchain-community-and-incentive-growth",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": []
+  },
+  {
+    "id": "onchain-analytics-and-attribution",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "recurring"
+    ]
+  },
+  {
+    "id": "protocol-security-monitoring",
+    "department": "Engineering",
+    "criticality": "existential",
+    "existential_at": [
+      "launched",
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "treasury-and-stablecoin-runway",
+    "department": "Finance",
+    "criticality": "existential",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": []
+  },
+  {
+    "id": "open-source-strategy",
+    "department": "Strategy",
+    "criticality": "core",
+    "existential_at": [
+      "building",
+      "launched"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "api-and-sdk-design",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [
+      "building",
+      "launched"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "developer-docs-and-dx",
+    "department": "Product",
+    "criticality": "core",
+    "existential_at": [
+      "launched",
+      "revenue"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "developer-relations-and-devrel",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "developer-community-and-contributors",
+    "department": "Success",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "bottom-up-plg-to-sales-handoff",
+    "department": "Sales",
+    "criticality": "core",
+    "existential_at": [
+      "revenue"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "firmware-and-ota-updates",
+    "department": "Engineering",
+    "criticality": "core",
+    "existential_at": [
+      "launched",
+      "revenue"
+    ],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "hardware-qa-and-reliability",
+    "department": "Operations",
+    "criticality": "core",
+    "existential_at": [
+      "launched",
+      "revenue"
+    ],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "retail-and-channel-distribution",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "warranty-and-rma-operations",
+    "department": "Success",
+    "criticality": "core",
+    "existential_at": [
+      "revenue",
+      "scaling"
+    ],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "spare-parts-and-aftermarket",
+    "department": "Operations",
+    "criticality": "optional",
+    "existential_at": [],
+    "model_fit": [
+      "physical_goods"
+    ]
+  },
+  {
+    "id": "plg-instrumentation-and-pqls",
+    "department": "Data",
+    "criticality": "core",
+    "existential_at": [
+      "scaling"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "in-app-purchase-and-store-economics",
+    "department": "Finance",
+    "criticality": "core",
+    "existential_at": [
+      "revenue"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "paywall-and-pricing-experiments",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [
+      "revenue"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "referral-and-virality-loops",
+    "department": "Growth",
+    "criticality": "growth",
+    "existential_at": [],
+    "model_fit": [
+      "self_serve"
+    ]
+  },
+  {
+    "id": "mobile-lifecycle-and-push",
+    "department": "Growth",
+    "criticality": "core",
+    "existential_at": [
+      "revenue"
+    ],
+    "model_fit": [
+      "self_serve"
+    ]
+  }
+]

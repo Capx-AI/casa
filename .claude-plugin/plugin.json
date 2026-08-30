@@ -1,0 +1,24 @@
+{
+  "name": "capx-casa",
+  "version": "0.2.0",
+  "description": "The open control plane for running a company from your terminal: derives your departments, routes work to specialist operator agents, parallelizes big tasks across subagents with an auto-verify gate, and coordinates it through a Chief of Staff.",
+  "author": {
+    "name": "Capx",
+    "url": "https://capx.ai"
+  },
+  "homepage": "https://github.com/Capx-AI/casa",
+  "license": "MIT",
+  "keywords": [
+    "founder",
+    "startup",
+    "company-building",
+    "agents",
+    "operators",
+    "orchestration",
+    "parallel",
+    "chief-of-staff",
+    "skills",
+    "loops",
+    "control-plane"
+  ]
+}

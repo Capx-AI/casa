@@ -1,0 +1,26 @@
+{
+  "weights": {
+    "default": 1,
+    "byDepartment": {
+      "Finance": 1.2,
+      "Success": 1.15,
+      "Growth": 1.2,
+      "Strategy": 1.2
+    },
+    "promote_ids": [
+      "first-users-traction",
+      "beachhead-selection",
+      "landing-page-cro",
+      "funnel-analysis",
+      "marketplace-supply-acquisition",
+      "hardware-preorder-demand-validation",
+      "referral-and-virality-loops",
+      "unit-economics",
+      "account-expansion-and-upsell",
+      "pricing-research"
+    ]
+  },
+  "north_star_archetype": "revenue_mrr",
+  "constraint": "no_users",
+  "win": "100 paying subscribers at 8 dollars a month within 90 days"
+}
