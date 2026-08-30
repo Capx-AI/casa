@@ -1,0 +1,33 @@
+{
+  "name": "capx-casa",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "The open control plane for building a company from your terminal.",
+  "homepage": "https://github.com/Capx-AI/casa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Capx-AI/casa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Capx-AI/casa/issues"
+  },
+  "scripts": {
+    "build:index": "node scripts/build-index.mjs",
+    "lint:playbooks": "node scripts/build-index.mjs --check",
+    "normalize": "node scripts/normalize-playbooks.mjs",
+    "plan": "node scripts/router.mjs plan",
+    "next": "node scripts/router.mjs next",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check-plugin.mjs && npm test",
+    "caf:fixtures": "node caf/fixtures/generate.mjs --out caf/fixtures/golden/supl && node caf/fixtures/adversarial.mjs",
+    "caf:legality": "node scripts/caf/legality.mjs",
+    "caf:lint": "node caf/lint.mjs",
+    "caf:check": "node caf/check.mjs",
+    "attest": "node scripts/brain.mjs attest"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.3.1"
+  }
+}

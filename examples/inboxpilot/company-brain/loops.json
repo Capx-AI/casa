@@ -1,0 +1,14 @@
+{
+  "_comment": "Recurring loops. v1 is interactive (run a due loop while present; ToS-safe on a subscription). v2 operate mode runs them headless on the founder's own API key. The advisor surfaces which are due. cadence_days = how often; min_level = when it becomes relevant; applies_when = required traits; runs = the playbook or skill it triggers; brain_key = where output lands. See skills/casa-loops for how loops run.",
+  "version": 1,
+  "loops": [
+    { "id": "weekly-retro", "title": "Weekly retro and system improvement", "cadence_days": 7, "min_level": 1, "runs": "weekly-business-review", "tier": "interactive", "brain_key": "system/retros", "why": "Review what shipped, fix what stalled, improve one loop. The meta-loop." },
+    { "id": "compliance-heartbeat", "title": "Compliance and deadline heartbeat", "cadence_days": 30, "min_level": 1, "runs": "human-in-the-loop-approval-gates", "tier": "interactive", "brain_key": "decisions", "why": "Catch filing windows, renewals, and legal deadlines before they slip." },
+    { "id": "content-engine", "title": "Content and distribution engine", "cadence_days": 7, "min_level": 3, "runs": "content-calendar", "tier": "interactive", "brain_key": "content", "why": "Publish, then learn which content actually drives pipeline." },
+    { "id": "weekly-pulse", "title": "Weekly metrics pulse", "cadence_days": 7, "min_level": 5, "runs": "weekly-business-review", "tier": "interactive", "brain_key": "metrics", "why": "Read the numbers, flag anomalies, set the week's focus." },
+    { "id": "customer-insight", "title": "Customer insight digestion", "cadence_days": 7, "min_level": 5, "runs": "nps-csat-program", "tier": "interactive", "brain_key": "customers", "why": "Turn support, calls, and NPS into roadmap and positioning input." },
+    { "id": "sales-pipeline", "title": "Sales pipeline review", "cadence_days": 7, "min_level": 5, "applies_when": ["b2b"], "runs": "discovery-call-framework", "tier": "interactive", "brain_key": "sales", "why": "Move deals, learn why you win and lose, update the objection library." },
+    { "id": "financial-close", "title": "Monthly financial close", "cadence_days": 30, "min_level": 5, "runs": "unit-economics", "tier": "interactive", "brain_key": "metrics", "why": "Reconcile, update burn and runway, flag anomalies." },
+    { "id": "growth-experiment", "title": "Growth experiment loop", "cadence_days": 14, "min_level": 6, "runs": "growth-loop-design", "tier": "interactive", "brain_key": "growth", "why": "Ship one experiment, log the result, retire what loses." }
+  ]
+}

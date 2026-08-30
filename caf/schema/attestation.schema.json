@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capx.ai/caf/1.1.0/attestation.schema.json",
+  "title": "CAF attestation envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "caf_version",
+    "sequence",
+    "prev_envelope_hash",
+    "subject",
+    "window",
+    "roots",
+    "digests",
+    "produced_at"
+  ],
+  "properties": {
+    "caf_version": {
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "prev_envelope_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company_pubkey",
+        "harness",
+        "brain_schema_version",
+        "playbook_index_sha256"
+      ],
+      "properties": {
+        "company_pubkey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "harness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "brain_schema_version": {
+          "type": "string"
+        },
+        "playbook_index_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "driver_harness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from_ts",
+        "to_ts"
+      ],
+      "properties": {
+        "from_ts": {
+          "type": "string",
+          "pattern": "Z$"
+        },
+        "to_ts": {
+          "type": "string",
+          "pattern": "Z$"
+        }
+      }
+    },
+    "roots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brain_root",
+        "disclosed_root"
+      ],
+      "properties": {
+        "brain_root": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "disclosed_root": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "digests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile",
+        "claims",
+        "ledger_delta",
+        "receipts_window",
+        "merkle"
+      ],
+      "properties": {
+        "claims": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "ledger_delta": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "receipts_window": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "merkle": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "profile": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "produced_at": {
+      "type": "string",
+      "pattern": "Z$"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^ed25519:"
+    }
+  }
+}

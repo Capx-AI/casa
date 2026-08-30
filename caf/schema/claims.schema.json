@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://capx.ai/caf/1.1.0/claims.schema.json",
+  "title": "CAF disclosed projection",
+  "type": "object",
+  "required": [
+    "state",
+    "buildmap",
+    "work",
+    "quality",
+    "spend",
+    "self_check"
+  ],
+  "properties": {
+    "state": {
+      "type": "object",
+      "required": [
+        "level"
+      ],
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        }
+      }
+    },
+    "buildmap": {
+      "type": "object",
+      "required": [
+        "total",
+        "done",
+        "ready",
+        "blocked",
+        "done_nodes"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "done": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ready": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "done_nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "node_id"
+            ]
+          }
+        }
+      }
+    },
+    "work": {
+      "type": "object",
+      "required": [
+        "tasks_done_window",
+        "tasks_done_total",
+        "node_id_coverage_bp"
+      ],
+      "properties": {
+        "tasks_done_window": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tasks_done_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "node_id_coverage_bp": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "required": [
+        "self_score_mean"
+      ],
+      "properties": {
+        "self_score_mean": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "spend": {
+      "type": "object",
+      "required": [
+        "settled_micros_total",
+        "pay_attested"
+      ],
+      "properties": {
+        "settled_micros_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pay_attested": {
+          "type": "boolean"
+        }
+      }
+    },
+    "self_check": {
+      "type": "object",
+      "required": [
+        "index_sha256",
+        "dag_violations"
+      ]
+    }
+  }
+}

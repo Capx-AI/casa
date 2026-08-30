@@ -1,0 +1,280 @@
+{
+  "_comment": "The casa-start stage interview, in FOUR passes: Define (what/who), Locate (stage tier), Core (north star, do-or-die constraint, horizon, anti-priorities, funding), and Backfill (skipped foundations). A greenfield run covers Define+Locate+Core+Backfill in about 6 to 9 interactions: the skill infers the low-yield Define answers from the one-liner and confirms them in one batch, skipping any question whose ask_when is unmet. An EXISTING-project run lets scan.mjs + the project-scanner pre-fill Define/Locate, so those passes are confirm-only and the budget is spent on the Core pass + a gap confirmation (about 4 to 6 interactions). The skill assembles the answers object { type, secondary_type, company_name, one_liner, icp, monetization, traits, tier, gaps, north_star_archetype, constraint_archetype, win_definition, horizon, anti_priorities } and feeds it to scripts/stage.mjs, which deterministically derives the profile, start level, and seed, AND seeds the initial business-aware pulse (pulse.json) from the Core answers. Each option's `sets` records the engine signal it produces; traits must stay within the catalog vocabulary (stage.mjs validates this). Keep prompts plain: no em-dashes, no emojis.",
+  "_scan_keys": "Per-question scan-awareness, read only on an existing-project run. satisfied_by_signal: a deterministic scan.mjs signal that proves this answer; with mode_when_scanned 'skip' the skill takes the scanned value and does not ask. prefilled_by: a project-scanner inferred field (for example inferred.type) that proposes an answer for the founder to confirm. mode_when_scanned: 'confirm' (include in the single batched confirmation the founder eyeballs) or 'skip' (accept silently, the code proved it). When neither a signal nor a prefill is present, the question is asked normally; a greenfield run always asks.",
+  "version": 2,
+  "passes": [
+    {
+      "pass": "define",
+      "intent": "What the business is and who it serves. Sets the static traits that decide which playbooks are members. On an existing-project run the scan + project-scanner pre-fill this whole pass; the skill confirms in one batch and never asks it cold.",
+      "questions": [
+        {
+          "id": "one_liner",
+          "prompt": "In one line, what is the business and who is it for?",
+          "kind": "text",
+          "sets": { "field": "one_liner" },
+          "prefilled_by": "inferred.one_liner",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "type",
+          "prompt": "Which best describes it?",
+          "kind": "single",
+          "options": [
+            { "label": "Software product (SaaS)", "sets": { "type": "saas" } },
+            { "label": "Marketplace (connects two sides)", "sets": { "type": "marketplace" } },
+            { "label": "Online store / ecommerce", "sets": { "type": "ecommerce" } },
+            { "label": "Done-for-you service for businesses", "sets": { "type": "b2b-service" } },
+            { "label": "Crypto / onchain", "sets": { "type": "crypto" } },
+            { "label": "Consumer app", "sets": { "type": "consumer" } },
+            { "label": "Content / media", "sets": { "type": "content" } },
+            { "label": "Hardware", "sets": { "type": "hardware" } }
+          ],
+          "prefilled_by": "inferred.type",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "audience",
+          "prompt": "Who pays you?",
+          "kind": "single",
+          "options": [
+            { "label": "Businesses (B2B)", "sets": { "trait": "b2b" } },
+            { "label": "Individual people (B2C)", "sets": { "trait": "b2c" } }
+          ],
+          "prefilled_by": "inferred.audience",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "acv",
+          "prompt": "How do deals close?",
+          "kind": "single",
+          "ask_when": { "audience": "b2b" },
+          "options": [
+            {
+              "label": "High value, sales-led (roughly 10k+ per year per account)",
+              "sets": { "trait": "high_acv" }
+            },
+            {
+              "label": "Lower value, self-serve signup",
+              "sets": { "traits": ["low_acv", "self_serve_only"] }
+            }
+          ],
+          "default_when": { "audience": "b2c", "traits": ["low_acv", "self_serve_only"] },
+          "prefilled_by": "inferred.audience",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "monetization",
+          "prompt": "How does it make money?",
+          "kind": "single",
+          "options": [
+            {
+              "label": "Subscription",
+              "sets": { "field": "monetization", "value": "subscription", "traits": ["takes_payments", "recurring_revenue"] }
+            },
+            {
+              "label": "One-time purchase",
+              "sets": { "field": "monetization", "value": "one-time", "traits": ["takes_payments"] }
+            },
+            {
+              "label": "Transaction / take rate",
+              "sets": { "field": "monetization", "value": "transaction-fee", "traits": ["takes_payments"] }
+            },
+            { "label": "Advertising", "sets": { "field": "monetization", "value": "ads" } },
+            { "label": "Free for now", "sets": { "field": "monetization", "value": "free" } }
+          ],
+          "satisfied_by_signal": "takes_payments",
+          "prefilled_by": "inferred.monetization",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "software",
+          "prompt": "Are you building software?",
+          "kind": "boolean",
+          "sets_when_true": { "trait": "builds_software" },
+          "satisfied_by_signal": "builds_software",
+          "mode_when_scanned": "skip"
+        },
+        {
+          "id": "technical_audience",
+          "prompt": "Is your audience technical (developers or engineers)?",
+          "kind": "boolean",
+          "ask_when": { "software": true },
+          "sets_when_true": { "trait": "technical_audience" },
+          "prefilled_by": "inferred.audience",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "collects_data",
+          "prompt": "Do you store customer or personal data (accounts, emails, payment info)?",
+          "kind": "boolean",
+          "sets_when_true": { "trait": "collects_user_data" },
+          "satisfied_by_signal": "has_user_accounts",
+          "mode_when_scanned": "confirm"
+        },
+        {
+          "id": "sends_email",
+          "prompt": "Do you send email to your users or customers (welcome, transactional, or marketing)?",
+          "kind": "boolean",
+          "sets_when_true": { "trait": "sends_email" },
+          "satisfied_by_signal": "sends_email",
+          "mode_when_scanned": "skip"
+        },
+        {
+          "id": "local_service",
+          "prompt": "Is this a local, in-person service (served in one area, not sold online nationally)?",
+          "kind": "boolean",
+          "sets_when_true": { "trait": "local_service_only" }
+        },
+        {
+          "id": "runs_paid_media",
+          "prompt": "Are you actively running paid acquisition right now (ads on Google, Meta, TikTok, and similar)?",
+          "kind": "boolean",
+          "sets_when_true": { "trait": "runs_paid_media" }
+        },
+        {
+          "id": "runs_agents",
+          "prompt": "Will AI agents run parts of this company autonomously, beyond you using AI tools yourself?",
+          "kind": "boolean",
+          "sets_when_true": { "trait": "runs_agents" }
+        }
+      ]
+    },
+    {
+      "pass": "locate",
+      "intent": "Where the business is today. Sets the stage tier, which fixes the start level and the milestone state-flags, and decides how much work is pre-seeded as done. The scan can prove building/launched, but code can never prove paying customers, so a revenue tier always needs founder confirmation (revenue-truth).",
+      "questions": [
+        {
+          "id": "tier",
+          "prompt": "Where are you today?",
+          "kind": "single",
+          "options": [
+            { "label": "Just an idea, nothing built", "sets": { "tier": "idea" } },
+            { "label": "Landing page or waitlist up, no product yet", "sets": { "tier": "landing" } },
+            { "label": "Building the product, not launched (have a repo or a deploy)", "sets": { "tier": "building" } },
+            { "label": "Launched, have users, no revenue yet", "sets": { "tier": "launched" } },
+            { "label": "Have paying customers / revenue", "sets": { "tier": "revenue" } },
+            { "label": "Product-market fit, scaling on paid channels", "sets": { "tier": "scaling" } }
+          ],
+          "prefilled_by": "inferred.tier",
+          "mode_when_scanned": "confirm",
+          "revenue_truth": "Code cannot prove paying customers. If the proposed tier is launched, revenue, or scaling, the founder must confirm it; never set a revenue tier from the scan alone."
+        }
+      ]
+    },
+    {
+      "pass": "core",
+      "intent": "What matters to THIS founder right now. This pass is never scannable: only the founder can name their north star, their do-or-die constraint, their horizon, and what they are deliberately not doing. stage.mjs apply reads these answers to seed the initial business-aware pulse (pulse.json), so the very first build map already leans toward the founder's goal before any manual pulse cascade. Always run this pass, greenfield or existing.",
+      "questions": [
+        {
+          "id": "north_star",
+          "prompt": "What is the one number that, if it goes up, means this is working? In your words.",
+          "kind": "archetype_map",
+          "maps_to_field": "north_star_archetype",
+          "guidance": "Offer the chips suggested for this business type as a prompt, then map the founder's free-text answer to exactly one canonical archetype id. The chips mirror the north-star families in scripts/northstar.mjs so they match the business type; the founder may also describe something off-menu, which you still map to the closest single id.",
+          "archetypes": [
+            { "id": "activation", "chip": "Activation", "metrics": "activation rate, time to first value, percent of signups that reach the aha moment" },
+            { "id": "engagement_retention", "chip": "Engagement and retention", "metrics": "retention, net revenue retention, DAU/MAU stickiness, repeat use, rebooking" },
+            { "id": "revenue_mrr", "chip": "Revenue", "metrics": "MRR, ARR, net revenue, booked revenue, protocol revenue" },
+            { "id": "acquisition_growth", "chip": "Acquisition and growth", "metrics": "signups, new users, MAU, DAU, active wallets, top of funnel" },
+            { "id": "conversion", "chip": "Conversion", "metrics": "visitor to signup, trial to paid, checkout conversion" },
+            { "id": "gmv_liquidity", "chip": "GMV and liquidity", "metrics": "GMV, match rate, transaction volume, TVL, take volume" },
+            { "id": "efficiency_unit_econ", "chip": "Efficiency and unit economics", "metrics": "LTV to CAC, gross margin, ARPU, payback period" },
+            { "id": "local_reputation", "chip": "Local reputation", "metrics": "bookings, rebooking rate, reviews rating" }
+          ],
+          "chips_by_type": {
+            "saas": ["revenue_mrr", "engagement_retention", "activation", "efficiency_unit_econ"],
+            "marketplace": ["gmv_liquidity", "engagement_retention", "revenue_mrr", "efficiency_unit_econ"],
+            "ecommerce": ["revenue_mrr", "engagement_retention", "efficiency_unit_econ", "conversion"],
+            "hardware": ["revenue_mrr", "engagement_retention", "efficiency_unit_econ", "conversion"],
+            "b2b-service": ["revenue_mrr", "engagement_retention", "efficiency_unit_econ", "acquisition_growth"],
+            "consumer": ["acquisition_growth", "engagement_retention", "activation", "revenue_mrr"],
+            "content": ["acquisition_growth", "engagement_retention", "activation", "revenue_mrr"],
+            "crypto": ["acquisition_growth", "engagement_retention", "gmv_liquidity", "revenue_mrr"]
+          },
+          "chip_overrides": [
+            { "when_trait": "local_service_only", "use": ["local_reputation", "acquisition_growth", "engagement_retention", "revenue_mrr"], "note": "A single-location in-person service steers by bookings, rebooking, and reviews." },
+            { "when_monetization": "subscription", "promote": "revenue_mrr", "note": "Subscription businesses steer by MRR or ARR; lead with revenue_mrr." },
+            { "when_monetization": "transaction-fee", "promote": "gmv_liquidity", "note": "Transaction and take-rate businesses steer by volume; lead with gmv_liquidity." }
+          ]
+        },
+        {
+          "id": "constraint",
+          "prompt": "What is the single thing most likely to kill this, the do-or-die constraint right now?",
+          "kind": "archetype_map",
+          "maps_to_field": "constraint_archetype",
+          "guidance": "Map the founder's free-text answer to exactly one canonical constraint id. This becomes a department weight delta in the initial pulse (for example regulatory_legal lifts Legal), so pick the closest single id.",
+          "archetypes": [
+            { "id": "no_users", "chip": "No users yet", "meaning": "not enough people are using it" },
+            { "id": "no_revenue", "chip": "No revenue", "meaning": "people use it but are not paying, or revenue is too small" },
+            { "id": "runway_burn", "chip": "Runway and burn", "meaning": "running low on cash or spending too fast" },
+            { "id": "regulatory_legal", "chip": "Regulatory or legal", "meaning": "compliance, licensing, or legal exposure blocks progress" },
+            { "id": "tech_scale", "chip": "Tech and scale", "meaning": "the product breaks or cannot handle the load" },
+            { "id": "hiring_capacity", "chip": "Hiring and capacity", "meaning": "not enough hands to do the work" }
+          ]
+        },
+        {
+          "id": "win_definition",
+          "prompt": "What would make the next stretch a clear win? If you can, give the metric, where it is now, and the target (for example: weekly active users, 50 now, 1000 target).",
+          "kind": "text",
+          "sets": { "field": "win_definition" },
+          "guidance": "When the founder names a metric WITH a current and target number, set win_definition to a STRUCTURED object { metric_id, current_value (number), target_value (number), deadline (optional, from the horizon answer) }. The engine turns this into a win_gap that sharpens how hard the binding constraint's plays are pushed (a company far from target gets its constraint work pushed harder than one nearly there). If they only give a qualitative answer, set win_definition to that string. Do not invent numbers the founder did not give."
+        },
+        {
+          "id": "horizon",
+          "prompt": "Over what horizon?",
+          "kind": "single",
+          "maps_to_field": "horizon",
+          "options": [
+            { "label": "This week", "sets": { "field": "horizon", "value": "this_week" } },
+            { "label": "Next 30 days", "sets": { "field": "horizon", "value": "30d" } },
+            { "label": "Next 90 days", "sets": { "field": "horizon", "value": "90d" } },
+            { "label": "This quarter", "sets": { "field": "horizon", "value": "quarter" } }
+          ]
+        },
+        {
+          "id": "anti_priorities",
+          "prompt": "What are you deliberately NOT working on yet? Name anything you want Casa to hold back.",
+          "kind": "text",
+          "maps_to_field": "anti_priorities",
+          "guidance": "Map the founder's free text to the playbook ids they want demoted, where you can name them confidently (for example a founder saying 'no fundraising yet' maps to pre-seed-fundraise). These become demote weights in the initial pulse. If nothing maps cleanly, leave anti_priorities as an empty array; do not invent ids."
+        },
+        {
+          "id": "capital",
+          "prompt": "How are you funding this?",
+          "kind": "single",
+          "ask_when": { "funding_unknown": true },
+          "options": [
+            { "label": "Raising or plan to raise venture capital", "sets": { "trait": "raising_capital" } },
+            { "label": "Bootstrapped / self-funded", "sets": { "trait": "bootstrapped_only" } }
+          ],
+          "note": "Ask only if funding is not already known. Code cannot prove funding, so the project-scanner puts it in ask_founder; if the founder already stated it, skip this question."
+        }
+      ]
+    },
+    {
+      "pass": "backfill",
+      "intent": "For an existing business, find the foundational work that was skipped so it is not wrongly marked done. Anything selected here is left out of the seed and surfaces as a ready catch-up item at the current level. The level floor keeps the company from regressing. On an existing-project run the project-scanner reconciles only the four high-value unblockers it can read (analytics, payments, legal/ToS, deploy) plus any gap it flagged; do not ask the whole battery cold.",
+      "questions": [
+        {
+          "id": "gaps",
+          "prompt": "Which of these have you NOT done yet? Select all that apply.",
+          "kind": "multi",
+          "ask_when": { "tier_not": "idea" },
+          "options": [
+            { "label": "Formed the company / incorporated", "sets": { "gap": "entity-formation" } },
+            { "label": "Secured a domain", "sets": { "gap": "domain-acquisition" } },
+            { "label": "Set up hosting and deployment", "sets": { "gap": "hosting-deployment-setup" } },
+            { "label": "Wired up analytics", "sets": { "gap": "analytics-stack-setup" } },
+            { "label": "Done a basic security pass", "sets": { "gap": "security-baseline" } },
+            { "label": "Published terms of service and a privacy policy", "sets": { "gap": "tos-and-privacy-policy" } },
+            { "label": "Raised a pre-seed or seed round", "sets": { "gap": "pre-seed-fundraise" } }
+          ],
+          "prefilled_by": "inferred.gaps",
+          "mode_when_scanned": "confirm",
+          "scanned_reconcile_only": ["analytics-stack-setup", "tos-and-privacy-policy", "hosting-deployment-setup"],
+          "scanned_reconcile_note": "On an existing-project run, confirm done-vs-gap with the founder for only the four high-value unblockers the scanner can read: analytics (analytics-stack-setup), payments (the takes_payments truth and monetization), legal/ToS (tos-and-privacy-policy), and deploy (hosting-deployment-setup). A present dependency proves the wiring exists, not that it is done correctly, so reconcile rather than assume. Do not ask the entity / domain / security / fundraise items cold unless the scanner flagged one."
+        }
+      ]
+    }
+  ]
+}

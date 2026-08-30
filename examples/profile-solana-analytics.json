@@ -1,0 +1,10 @@
+{
+  "company_name": "Memescope",
+  "confirmed": true,
+  "primary_type": "saas",
+  "secondary_type": "crypto",
+  "traits": ["b2c", "self_serve_only", "takes_payments", "recurring_revenue", "builds_software", "technical_audience", "reads_onchain_data"],
+  "icp": "Solana memecoin traders and small funds who want analytics dashboards",
+  "monetization": "subscription",
+  "one_liner": "Analytics dashboards for Solana memecoin traders"
+}
