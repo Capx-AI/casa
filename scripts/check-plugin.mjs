@@ -58,7 +58,10 @@ try {
   if (Object.hasOwn(hooks.hooks || {}, "SessionEnd")) {
     // The only allowed SessionEnd hook is the capx/ autopush, and it must exit before doing anything when capx/ is absent.
     const script = join(repo, "hooks", "session-end.sh");
-    const guarded = existsSync(script) && /\[ -d "\$root\/capx" \] \|\| exit 0/.test(readFileSync(script, "utf8"));
+    const commands = JSON.stringify(hooks.hooks.SessionEnd).match(/"command":"([^"]+)"/g) || [];
+    const bound = commands.length > 0 && commands.every((c) => c === '"command":"${CLAUDE_PLUGIN_ROOT}/hooks/session-end.sh"');
+    const firstCode = existsSync(script) ? readFileSync(script, "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))[0] : "";
+    const guarded = bound && /^root=/.test(firstCode) && /\[ -d "\$root\/capx" \] \|\| exit 0/.test(readFileSync(script, "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))[1] || "");
     guarded ? ok("hooks.json: SessionEnd hook is guarded on capx/ presence") : fail("hooks.json: SessionEnd hook must be hooks/session-end.sh guarded by [ -d \"$root/capx\" ] || exit 0");
   } else {
     ok("hooks.json: no SessionEnd hook");
@@ -87,7 +90,7 @@ try {
 const RUNTIME = [
   "router.mjs", "brain.mjs", "stage.mjs", "northstar.mjs", "wave.mjs",
   "scan.mjs", "copy-lint.mjs", "design-check.mjs", "operate.mjs",
-  "headless-runner.mjs", "verify.mjs", "briefs.mjs", "check-plugin.mjs",
+  "headless-runner.mjs", "verify.mjs", "briefs.mjs", "check-plugin.mjs", "face.mjs",
 ];
 // Returns null for a file we cannot read, so a dangling relative import is reported as a
 // broken import rather than crashing the preflight with a stack trace.
@@ -155,7 +158,9 @@ for (const s of RUNTIME) {
     for (const f of walk(abs)) {
       if (!/\.(mjs|js|sh)$/.test(f)) continue;
       if (relative(repo, f) === "hooks/session-end.sh") continue; // the guarded hook is the one sanctioned caller
-      if (/(?:from\s+["']|import\(\s*["']|node\s+)[^"'\n]*(?:^|\/)capx\//m.test(readFileSync(f, "utf8"))) importers.push(relative(repo, f));
+      if (relative(repo, f) === "scripts/check-plugin.mjs") continue;
+      const code = readFileSync(f, "utf8").split("\n").filter((l) => !/^\s*(\/\/|#)/.test(l)).join("\n"); // comments may name the seam; code may not touch it
+      if (/capx\/[A-Za-z0-9_-]+\.(?:mjs|js|sh)\b/.test(code)) importers.push(relative(repo, f));
     }
   }
   importers.length ? fail(`fork guarantee: files outside capx/ reference capx/: ${importers.join(", ")}`) : ok("fork guarantee: nothing outside capx/ imports capx/");

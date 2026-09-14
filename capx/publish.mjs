@@ -10,7 +10,7 @@
 // Failed finalize leaves the previous active version unchanged.
 // Does not execute user builds. Does not print the private key.
 
-import { readFileSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -171,7 +171,9 @@ export async function publishArtifact({ type, dir, brainDir, api, keyArg }) {
 /** Publish the company face manifest built by scripts/face.mjs. The service stores it on the claimed plane. */
 export async function publishFace({ brainDir, api, keyArg }) {
   if (typeof brainDir !== "string" || !brainDir) throw new Error("face needs --brain <companyBrainDir>");
-  const face = JSON.parse(readFileSync(join(brainDir, "face.json"), "utf8"));
+  const facePath = join(brainDir, "face.json");
+  if (statSync(facePath).size > 512 * 1024) throw new Error("face.json exceeds 512 KB; rebuild it with scripts/face.mjs");
+  const face = JSON.parse(readFileSync(facePath, "utf8"));
   const res = await signedCompanyPost(apiBase({ api }), loadSigner({ keyArg, brainDir }), "/v1/companies/face", "company-face", { face });
   if (res.status !== 200 || typeof res.json?.slug !== "string") throw new Error(`face publish failed (${res.status}): ${JSON.stringify(res.json)}`);
   return res.json;

@@ -48,7 +48,7 @@ test("the SessionEnd hook exits before any work when capx/ is absent", () => {
   assert.ok(hooks.includes("hooks/session-end.sh"), "SessionEnd must point at hooks/session-end.sh");
   const script = readFileSync(join(REPO, "hooks", "session-end.sh"), "utf8");
   assert.ok(script.includes('[ -d "$root/capx" ] || exit 0'), "session-end.sh must be guarded on capx/");
-  assert.ok(!/curl|wget|fetch\(/.test(script), "the hook itself opens no network path; capx/autopush.mjs does");
+  assert.ok(!/curl|wget|fetch\(/.test(script), "the hook itself opens no network path; the autopush client under capx does");
 });
 
 test("AGENTS.md exists and wires the non-Claude path", () => {

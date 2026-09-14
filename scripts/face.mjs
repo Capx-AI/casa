@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Local company face projection. Source files and engine state remain untouched.
-import { readFileSync, writeFileSync, readdirSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, lstatSync, realpathSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { digest } from "./caf/digest.mjs";
@@ -14,9 +14,14 @@ const invalid = (message) => { throw Object.assign(new Error(message), { validat
 
 export function buildFace(dir) {
   const sources = {}, mermaid = {};
+  const root = realpathSync(dir);
   const read = (path) => {
     let bytes;
-    try { bytes = readFileSync(join(dir, path)); } catch { return null; }
+    try {
+      // Symlinks and anything resolving outside the brain are treated as absent: the face never reads beyond company-brain/.
+      if (lstatSync(join(dir, path)).isSymbolicLink() || !realpathSync(join(dir, path)).startsWith(root + "/")) return null;
+      bytes = readFileSync(join(dir, path));
+    } catch { return null; }
     if (path.endsWith(".mmd") && bytes.length > 20 * 1024) invalid(`${path}: diagram exceeds 20 KB`);
     sources[path] = digest(bytes);
     return bytes.toString("utf8");
@@ -28,6 +33,7 @@ export function buildFace(dir) {
     try { entries = readdirSync(join(dir, path), { withFileTypes: true }); } catch { return; }
     for (const entry of entries.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0)) {
       const rel = `${path}/${entry.name}`;
+      if (entry.isSymbolicLink()) continue;
       if (entry.isDirectory()) diagrams(rel);
       else if (entry.isFile() && entry.name.endsWith(".mmd")) {
         const source = read(rel);

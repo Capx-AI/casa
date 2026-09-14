@@ -365,7 +365,7 @@ else if (cmd === "complete") {
   let agent;
   if (flag !== -1) {
     agent = rest[flag + 1];
-    if (!agent?.trim() || agent.startsWith("--")) { console.error("complete: --agent needs a name"); process.exit(2); }
+    if (!agent?.trim() || agent.startsWith("--") || agent.includes("=") || agent.length > 64) { console.error("complete: --agent needs a plain name of at most 64 characters"); process.exit(2); }
     rest.splice(flag, 2);
   }
   if (!rest.length) { console.error("complete needs at least one playbook id"); process.exit(2); }
