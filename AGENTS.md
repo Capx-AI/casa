@@ -37,7 +37,7 @@ harness, can skip a gate or invent a dependency.
 3. Where a skill says to spawn subagents in parallel, and your harness has no subagent
    primitive, run the pieces one after another in the same order. Correctness does not
    depend on parallelism; only speed does.
-4. Keep all work local. Casa has no publishing client or SessionEnd upload hook.
+4. Keep all work local unless the brain is bound to a Capx token. The `capx/` seam (bind, publish, autopush) is the only network path; delete `capx/` and Casa is fully offline. Claude Code runs `hooks/session-end.sh` (autopush for a bound brain); other harnesses run `node capx/autopush.mjs company-brain` at the end of a session.
    If the founder later chooses a separate integration, follow that integration's
    disclosure and approval flow outside the Casa core.
 

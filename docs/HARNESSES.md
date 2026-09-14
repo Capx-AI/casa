@@ -49,8 +49,8 @@ What does NOT degrade: state integrity. Every mutation goes through `brain.mjs`,
 company driven from any harness has the same gates, the same level model, the same
 ledger, and the same honest NOW.md as one driven from Claude Code.
 
-Casa does not auto-push from any harness. The core contains no publishing client
-and registers no SessionEnd upload hook. A separately installed integration must
+Casa auto-pushes only for a brain bound to a Capx token, only through `capx/`: Claude Code via the guarded SessionEnd hook, every other harness via `node capx/autopush.mjs company-brain` in its session ritual. Without `capx/` the core contains no publishing client
+and the SessionEnd hook exits immediately. A separately installed integration must
 document its own disclosure and approval flow.
 
 ## Attestation strength by adoption level

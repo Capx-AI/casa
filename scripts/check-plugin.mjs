@@ -56,7 +56,10 @@ for (const f of walk(join(repo, "agents"), ".md")) {
 try {
   const hooks = readJSON(join(repo, "hooks", "hooks.json"));
   if (Object.hasOwn(hooks.hooks || {}, "SessionEnd")) {
-    fail("hooks.json: SessionEnd hooks are forbidden in the offline core");
+    // The only allowed SessionEnd hook is the capx/ autopush, and it must exit before doing anything when capx/ is absent.
+    const script = join(repo, "hooks", "session-end.sh");
+    const guarded = existsSync(script) && /\[ -d "\$root\/capx" \] \|\| exit 0/.test(readFileSync(script, "utf8"));
+    guarded ? ok("hooks.json: SessionEnd hook is guarded on capx/ presence") : fail("hooks.json: SessionEnd hook must be hooks/session-end.sh guarded by [ -d \"$root/capx\" ] || exit 0");
   } else {
     ok("hooks.json: no SessionEnd hook");
   }
@@ -120,7 +123,7 @@ for (const s of RUNTIME) {
 //     Integrations belong in separate, explicit opt-in packages.
 {
   const roots = ["scripts", "caf", "hooks"];
-  const forbiddenPaths = ["capx", "service", "deployments", "tracker"];
+  const forbiddenPaths = ["service", "deployments", "tracker"];
   const offenders = [];
   for (const path of forbiddenPaths) {
     if (existsSync(join(repo, path))) offenders.push(`${path}/ exists`);
@@ -144,6 +147,18 @@ for (const s of RUNTIME) {
   offenders.length
     ? fail(`offline core contains a hosted/operations surface or network client: ${offenders.join(", ")}`)
     : ok(`offline core: no hosted surfaces or network clients (${roots.length} roots scanned)`);
+  // THE FORK GUARANTEE: nothing outside capx/ may import capx/, so `rm -rf capx/ && npm run check` stays green.
+  const importers = [];
+  for (const root of ["scripts", "caf", "hooks", "tests"]) {
+    const abs = join(repo, root);
+    if (!existsSync(abs)) continue;
+    for (const f of walk(abs)) {
+      if (!/\.(mjs|js|sh)$/.test(f)) continue;
+      if (relative(repo, f) === "hooks/session-end.sh") continue; // the guarded hook is the one sanctioned caller
+      if (/(?:from\s+["']|import\(\s*["']|node\s+)[^"'\n]*(?:^|\/)capx\//m.test(readFileSync(f, "utf8"))) importers.push(relative(repo, f));
+    }
+  }
+  importers.length ? fail(`fork guarantee: files outside capx/ reference capx/: ${importers.join(", ")}`) : ok("fork guarantee: nothing outside capx/ imports capx/");
 }
 
 // 7. company-brain template has the JSON state files + contract
