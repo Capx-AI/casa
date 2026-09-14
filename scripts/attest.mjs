@@ -150,7 +150,8 @@ function claimsOf(brainDir, delta, allEvents) {
       critical_remaining: nodes.filter((n) => n.on_critical_path && n.status !== "done").length,
       done_delta: delta.filter((e) => e.kind === "playbook" && e.status === "done").length,
       levels: (buildmap?.levels || []).map((L) => ({
-        level: Number(L.level),
+        // The always-on Foundations lane has no numeric level; it is -1 in the level model.
+        level: Number.isFinite(Number(L.level)) ? Number(L.level) : -1,
         name: L.name || null,
         total: (L.nodes || []).length,
         done: (L.nodes || []).filter((n) => n.status === "done").length,
