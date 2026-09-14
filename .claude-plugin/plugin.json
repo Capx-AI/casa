@@ -1,6 +1,6 @@
 {
   "name": "capx-casa",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "The open control plane for running a company from your terminal: derives your departments, routes work to specialist operator agents, parallelizes big tasks across subagents with an auto-verify gate, and coordinates it through a Chief of Staff.",
   "author": {
     "name": "Capx",

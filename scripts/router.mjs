@@ -48,15 +48,24 @@ const COMPLETION_FLAGS = {
 const arr = (v) => (Array.isArray(v) ? v : v == null ? [] : [v]);
 const levelKey = (l) => (l === "always-on" ? -1 : Number(l));
 
-// Phase 0 distribution foundation. Members of every profile, recommended at idea
-// stage, but they do not gate the company-building level ladder and are never
+// Phase 0 company face. Core plays are members of every profile; token flow is opt-in.
+// Recommended at idea stage, but they do not gate the level ladder and are never
 // auto-seeded. Incomplete Phase 0 must not pin a company at level 0 or rewrite
-// existing brain history. Terminal publication is gated later (CA-03).
+// existing brain history. Publication requires explicit founder approval.
 export const PHASE0_IDS = new Set([
+  "phase0-company-brief",
+  "phase0-architecture",
+  "phase0-product-flow",
+  "phase0-data-model",
+  "phase0-roadmap",
+  "phase0-org-chart",
+  "phase0-task-plan",
+  "phase0-token-flow",
   "phase0-website",
   "phase0-one-pager",
   "phase0-pitch-deck",
   "phase0-publish-readiness",
+  "phase0-publish",
 ]);
 export const gatesLevel = (m) => !PHASE0_IDS.has(m.id);
 

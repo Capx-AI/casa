@@ -21,10 +21,10 @@ selection_hint: >-
   company-brain/outputs/phase0-website/.
 action: "Write a self-contained static company site to company-brain/outputs/phase0-website/ and do not publish it."
 depends_on: []
-soft_after: []
+soft_after: [phase0-architecture, phase0-product-flow]
 produces:
   - phase0_website
-consumes: []
+consumes: [company_brief]
 effort: L
 leverage: high
 reversibility: easy
@@ -42,12 +42,14 @@ deliverable:
     - About or product section that states who it is for and what it does
     - Contact or waitlist path
     - Logo or mark, typography, and a small image set with relative paths
+    - Inline Mermaid diagram and relative links to the one-pager and deck
     - README that names the files and how to open the site locally
   max_words: 800
 rubric: >-
   Passes only when the site is real static files under company-brain/outputs/phase0-website/
   (not a mockup, not a prompt, not a hosted URL), opens locally via index.html with
-  relative assets, states the company name and offer, and the README records that
+  relative assets, states the company name, real product nouns, and a brief fact,
+  renders a Mermaid diagram inline, links the one-pager and deck, and the README records that
   nothing was published.
 ---
 # Phase 0 Website
@@ -59,7 +61,8 @@ builder. The agent harness writes static files on the founder's machine.
 
 ## Procedure
 
-1. Read `company-brain/profile.json` for the company name, one-liner, ICP, and
+1. Read `company-brain/outputs/phase0-company-brief/brief.md` and
+   `company-brain/profile.json` for the company name, one-liner, ICP, and
    type. Use that name. Do not invent a placeholder brand.
 2. Draft the site as static HTML, CSS, and JS, with fonts and images as local
    files. A JAMstack generator is allowed only if the generated output is still
@@ -73,6 +76,10 @@ builder. The agent harness writes static files on the founder's machine.
    a short about or product section; a contact or waitlist path; a simple logo
    or mark (SVG or PNG is enough). Keep copy institutional. No em-dashes, no
    emojis.
+   Render at least one Mermaid source from phase0-architecture or phase0-product-flow
+   inline using a local renderer or its generated SVG. If neither exists, run one
+   of those plays first. Raw Mermaid text alone does not pass. Link the collateral
+   with `../phase0-one-pager/index.html` and `../phase0-pitch-deck/index.html`.
 5. Write `README.md` in that folder: what was built, how to open it locally,
    and an explicit line that this play did not publish anything.
 6. Stop. Do not POST to a publish or host API, do not `npm install` on a remote

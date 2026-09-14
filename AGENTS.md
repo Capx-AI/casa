@@ -41,6 +41,18 @@ harness, can skip a gate or invent a dependency.
    If the founder later chooses a separate integration, follow that integration's
    disclosure and approval flow outside the Casa core.
 
+## Phase 0 and the face
+
+Run the company face plays in order: 249 (brief), 255 (architecture), 256 (product
+flow), 257 (data model), 258 (roadmap), 259 (org chart and agents), 260 (90-day task
+plan), optional 261 (token flow), then 250 (website), 251 (one-pager), 252 (deck),
+and 253 (readiness). Follow engine readiness; the brief consumes opportunity-scan
+evidence. Draft company-specific artifacts, then run
+`node "$CASA_ROOT/scripts/face.mjs" build company-brain` to assemble `face.json`.
+Use `check` instead of `build` for validation without writing. Phase 0 is never
+seeded and does not gate company levels. Play 262 publishes only through a separate
+installed integration after explicit founder approval; see `docs/ATTESTATION.md`.
+
 ## Engine quick reference
 
 All plain CLIs, argv in, stdout out. `<brain>` is the company's `company-brain/` folder.

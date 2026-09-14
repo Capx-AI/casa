@@ -23,7 +23,7 @@ soft_after:
   - phase0-website
 produces:
   - phase0_one_pager
-consumes: []
+consumes: [company_brief]
 effort: M
 leverage: high
 reversibility: easy
@@ -57,9 +57,10 @@ harness writes static files locally.
 
 ## Procedure
 
-1. Read `company-brain/profile.json`. If `company-brain/outputs/phase0-website/`
+1. Read `company-brain/outputs/phase0-company-brief/brief.md` and
+   `company-brain/profile.json`. If `company-brain/outputs/phase0-website/`
    exists, reuse its name, one-liner, logo, and colors so the one-pager matches
-   the site. If it does not exist yet, proceed from the profile alone.
+   the site. If it does not exist yet, proceed from the brief and profile.
 2. Write a single responsive page (one `index.html` plus CSS, or a self-contained
    HTML file) under `company-brain/outputs/phase0-one-pager/`. It must work
    locally with relative paths. No remote fonts that break offline, no required

@@ -1,7 +1,7 @@
 // Unit tests for the deterministic router engine (scripts/router.mjs).
 // These assert the graph math directly through the library exports, against the
-// real catalog (174 playbooks) and the two shipped example profiles. The numbers
-// here (129/174, 120/174) are the golden build maps; they are a tripwire for any
+// real catalog (183 playbooks) and the two shipped example profiles. The numbers
+// here (137/183, 128/183) are the golden build maps; they are a tripwire for any
 // unintended membership change.
 
 import { test } from "node:test";
@@ -14,27 +14,29 @@ const MEME = loadJson("examples/profile-solana-analytics.json"); // b2c, self_se
 
 // ---- select ----
 
-test("select: b2b high-acv profile selects 129/174", () => {
+test("select: b2b high-acv profile selects 137/183", () => {
   const { members, skipped } = select(INDEX, PROBE);
-  assert.equal(members.length, 129);
-  assert.equal(skipped.length, 45);
+  assert.equal(members.length, 137);
+  assert.equal(skipped.length, 46);
   assert.equal(members.length + skipped.length, INDEX.length);
 });
 
-test("select: b2c self-serve profile selects 120/174", () => {
+test("select: b2c self-serve profile selects 128/183", () => {
   const { members, skipped } = select(INDEX, MEME);
-  assert.equal(members.length, 120);
-  assert.equal(skipped.length, 54);
+  assert.equal(members.length, 128);
+  assert.equal(skipped.length, 55);
 });
 
-test("select: Phase 0 distribution foundation is a member of both golden profiles", () => {
-  const ids = ["phase0-website", "phase0-one-pager", "phase0-pitch-deck", "phase0-publish-readiness"];
-  const probe = new Set(select(INDEX, PROBE).members.map((m) => m.id));
-  const meme = new Set(select(INDEX, MEME).members.map((m) => m.id));
-  for (const id of ids) {
-    assert.ok(probe.has(id), `b2b is missing ${id}`);
-    assert.ok(meme.has(id), `b2c is missing ${id}`);
+test("select: Phase 0 set includes every face play and every example gets the brief", () => {
+  const ids = INDEX.filter((p) => p.id.startsWith("phase0-")).map((p) => p.id);
+  assert.equal(ids.length, 13);
+  assert.deepEqual([...PHASE0_IDS].sort(), ids.sort());
+  for (const profile of [PROBE, MEME, loadJson("examples/inboxpilot/company-brain/profile.json")]) {
+    const members = new Set(select(INDEX, profile).members.map((p) => p.id));
+    for (const id of ids.filter((id) => id !== "phase0-token-flow")) assert.ok(members.has(id), `${profile.company_name} missing ${id}`);
+    assert.equal(members.has("phase0-token-flow"), profile.traits.includes("has_token"));
   }
+  assert.ok(select(INDEX, { ...MEME, traits: [...MEME.traits, "has_token"] }).members.some((p) => p.id === "phase0-token-flow"));
 });
 
 test("select: every skipped playbook carries a non-empty reason", () => {
@@ -126,14 +128,16 @@ test("nextActions: at level 0 nothing above level 0 is recommended", () => {
   for (const a of acts) assert.ok(levelKey(a.level) <= 0, `${a.id} is above level 0`);
 });
 
-test("nextActions: idea-stage headlines Phase 0 website before validation", () => {
+test("nextActions: Phase 0 brief follows opportunity evidence, then unblocks the website", () => {
   const acts = nextActions(INDEX, MEME, { completed: [], level: 0 });
   assert.ok(acts.length > 0, "some action is ready at level 0");
-  assert.equal(acts[0].id, "phase0-website", `headline was ${acts[0].id}`);
-  assert.ok(PHASE0_IDS.has(acts[0].id));
   const ids = acts.map((a) => a.id);
-  assert.ok(ids.includes("opportunity-scan"), "validation stays ready alongside Phase 0");
-  assert.ok(ids.indexOf("phase0-website") < ids.indexOf("opportunity-scan"));
+  assert.ok(ids.includes("opportunity-scan"));
+  assert.ok(!ids.includes("phase0-company-brief") && !ids.includes("phase0-website"));
+  const afterScan = nextActions(INDEX, MEME, { completed: ["opportunity-scan"], level: 0 });
+  assert.ok(afterScan.some((p) => p.id === "phase0-company-brief"));
+  assert.ok(!afterScan.some((p) => p.id === "phase0-website"));
+  assert.ok(nextActions(INDEX, MEME, { completed: ["opportunity-scan", "phase0-company-brief"], level: 0 }).some((p) => p.id === "phase0-website"));
 });
 
 test("nextActions: results are sorted by tier then score", () => {

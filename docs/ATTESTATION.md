@@ -23,6 +23,30 @@ holds no keys: **Casa renders, the sidecar signs.** Casa never sees a private ke
 does not publish the result. If you share an attestation, inspect the disclosed files
 first and use a separate founder-controlled transfer or integration.
 
+## Publishing the face
+
+Phase 0 produces local company artifacts and `company-brain/face.json`. The
+manifest is a company-authored projection, separate from the signed attestation.
+`node scripts/face.mjs check company-brain` validates without writing. Missing
+inputs allow a partial face; publish-readiness still requires the complete set.
+
+After readiness, review the face, collateral, and destination with the founder.
+One explicit approval covers the following sequence, run by the harness:
+
+```sh
+node scripts/face.mjs build company-brain
+node capx/publish.mjs site --dir company-brain/outputs/phase0-website --brain company-brain
+node capx/publish.mjs one-pager --dir company-brain/outputs/phase0-one-pager --brain company-brain
+node capx/publish.mjs deck --dir company-brain/outputs/phase0-pitch-deck --brain company-brain
+node capx/publish.mjs face --brain company-brain
+```
+
+The publish commands only work when the separate `capx/` integration is present
+and the brain is bound through `company-brain/capx-bind.json`. Casa core includes
+no publishing client. If the integration or binding is missing, keep the local
+artifacts and leave publication open. Record confirmed URLs and approval scope
+in `company-brain/outputs/phase0-publish/README.md`; failures remain open.
+
 ## What is in `attest/`
 
 | File | What it is |

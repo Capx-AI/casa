@@ -30,7 +30,7 @@ Company brain           company-brain/ in the founder's project (plain text, git
 ## The deterministic engine
 
 `scripts/router.mjs` is the core. Given a business profile and the playbook
-catalog (`playbooks/_index.json`, 174 playbooks with machine-readable
+catalog (`playbooks/_index.json`, 183 playbooks with machine-readable
 frontmatter), it:
 
 1. **Selects** the playbooks that apply, by trait pre-filter (`applies_to`,

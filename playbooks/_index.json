@@ -1,7 +1,7 @@
 {
   "schema": "docs/PLAYBOOK-SCHEMA.md",
-  "count": 174,
-  "index_sha256": "3bc604f688451005b475f469fbe93e8212093e46f285f0be31780f4f8d9eca8a",
+  "count": 183,
+  "index_sha256": "5956b8ac0cc7af31a1e6974dee8240ef4088dde4411496f0faa6a82a07b7388b",
   "playbooks": [
     {
       "id": "opportunity-scan",
@@ -8160,6 +8160,57 @@
       "rubric": "Passes if every revenue-enabling activity is mapped to a specific named license or a documented exemption, each gate has an owner, a lead time, and a position in a dependency-ordered sequence."
     },
     {
+      "id": "phase0-company-brief",
+      "title": "Phase 0 Company Brief",
+      "level": 0,
+      "file": "playbooks/level-0/249-phase0-company-brief.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Run first in Phase 0 to ground every company face artifact.",
+      "depends_on": [],
+      "soft_after": [
+        "opportunity-scan"
+      ],
+      "produces": [
+        "company_brief"
+      ],
+      "consumes": [
+        "opportunity_brief"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Strategy",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-company-brief/brief.md",
+        "sections": [
+          "What it does",
+          "Who it is for",
+          "How it works",
+          "What the agents run",
+          "The token in the product (only when capx-bind.json exists)",
+          "True today versus planned"
+        ],
+        "max_words": 900
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact in the brief traced to a local input. Five concrete steps and current versus planned claims are required; placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
       "id": "phase0-website",
       "title": "Phase 0 Website",
       "level": 0,
@@ -8174,11 +8225,16 @@
       "relevance": "core",
       "selection_hint": "First public-facing artifact for every new company. Run at idea stage before or alongside validation. Skip only if a real local site already lives under company-brain/outputs/phase0-website/.",
       "depends_on": [],
-      "soft_after": [],
+      "soft_after": [
+        "phase0-architecture",
+        "phase0-product-flow"
+      ],
       "produces": [
         "phase0_website"
       ],
-      "consumes": [],
+      "consumes": [
+        "company_brief"
+      ],
       "effort": "L",
       "leverage": "high",
       "reversibility": "easy",
@@ -8199,11 +8255,12 @@
           "About or product section that states who it is for and what it does",
           "Contact or waitlist path",
           "Logo or mark, typography, and a small image set with relative paths",
+          "Inline Mermaid diagram and relative links to the one-pager and deck",
           "README that names the files and how to open the site locally"
         ],
         "max_words": 800
       },
-      "rubric": "Passes only when the site is real static files under company-brain/outputs/phase0-website/ (not a mockup, not a prompt, not a hosted URL), opens locally via index.html with relative assets, states the company name and offer, and the README records that nothing was published."
+      "rubric": "Passes only when the site is real static files under company-brain/outputs/phase0-website/ (not a mockup, not a prompt, not a hosted URL), opens locally via index.html with relative assets, states the company name, real product nouns, and a brief fact, renders a Mermaid diagram inline, links the one-pager and deck, and the README records that nothing was published."
     },
     {
       "id": "phase0-one-pager",
@@ -8226,7 +8283,9 @@
       "produces": [
         "phase0_one_pager"
       ],
-      "consumes": [],
+      "consumes": [
+        "company_brief"
+      ],
       "effort": "M",
       "leverage": "high",
       "reversibility": "easy",
@@ -8272,7 +8331,9 @@
       "produces": [
         "phase0_pitch_deck"
       ],
-      "consumes": [],
+      "consumes": [
+        "company_brief"
+      ],
       "effort": "M",
       "leverage": "high",
       "reversibility": "easy",
@@ -8310,8 +8371,14 @@
         "excluded_traits": []
       },
       "relevance": "core",
-      "selection_hint": "The local distribution gate for every new company. Run after the Phase 0 website, one-pager, and deck exist. Completing it does not go live.",
+      "selection_hint": "The local distribution gate for every new company. Run after the Phase 0 brief, diagrams, roadmap, org chart, task plan, and collateral exist. Completing it does not go live.",
       "depends_on": [
+        "phase0-architecture",
+        "phase0-product-flow",
+        "phase0-data-model",
+        "phase0-roadmap",
+        "phase0-org-chart",
+        "phase0-task-plan",
         "phase0-website",
         "phase0-one-pager",
         "phase0-pitch-deck"
@@ -8321,6 +8388,12 @@
         "phase0_publish_readiness"
       ],
       "consumes": [
+        "architecture_diagram",
+        "product_flow",
+        "data_model",
+        "roadmap",
+        "org_chart",
+        "task_plan",
         "phase0_website",
         "phase0_one_pager",
         "phase0_pitch_deck"
@@ -8341,12 +8414,13 @@
         "sections": [
           "Name, description, logo, and category",
           "Local website, one-pager, and deck versions with paths",
+          "Brief, technical artifacts, and successful face manifest build",
           "At least one completed Casa playbook with a real outputs/ artifact",
           "Explicit non-publish statement"
         ],
         "max_words": 600
       },
-      "rubric": "Passes only when every checklist item is present on disk (name, description, logo, category, website, one-pager, deck, and at least one completed playbook artifact), each path is real, and the write-up states that this play did not publish and that going public still requires an explicit founder-controlled deployment."
+      "rubric": "Passes only when every checklist item is present on disk (name, description, logo, category, brief, diagrams, roadmap, org chart, task plan, collateral, and a completed playbook artifact), each path is real, and the write-up states that this play did not publish and that going public still requires an explicit founder-controlled deployment."
     },
     {
       "id": "artifact-change-brief",
@@ -8402,6 +8476,394 @@
         "max_words": 700
       },
       "rubric": "Passes only when a real brief exists under company-brain/outputs/artifact-change-brief/, marks the change as approval required, names the local artifacts, and states that this play did not publish or activate. A run that called publish or activate is a fail."
+    },
+    {
+      "id": "phase0-architecture",
+      "title": "Phase 0 Architecture",
+      "level": 0,
+      "file": "playbooks/level-0/255-phase0-architecture.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Turn the company brief into a technical system view before collateral.",
+      "depends_on": [
+        "phase0-company-brief"
+      ],
+      "soft_after": [],
+      "produces": [
+        "architecture_diagram"
+      ],
+      "consumes": [
+        "company_brief"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Engineering",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-architecture/architecture.mmd and README.md",
+        "sections": [
+          "System boundaries",
+          "Named components and interfaces",
+          "Current versus planned"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. Every box is named in the README and every edge describes an actual interaction; placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-product-flow",
+      "title": "Phase 0 Product Flow",
+      "level": 0,
+      "file": "playbooks/level-0/256-phase0-product-flow.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Explain the main user journey from the company brief before collateral.",
+      "depends_on": [
+        "phase0-company-brief"
+      ],
+      "soft_after": [],
+      "produces": [
+        "product_flow"
+      ],
+      "consumes": [
+        "company_brief"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Product",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-product-flow/flow.mmd and README.md",
+        "sections": [
+          "User trigger and actors",
+          "Primary path and handoffs",
+          "Result and recovery"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. The path has a concrete trigger, actor handoffs, and observable result; placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-data-model",
+      "title": "Phase 0 Data Model",
+      "level": 0,
+      "file": "playbooks/level-0/257-phase0-data-model.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Ground the data model in the architecture and its company brief.",
+      "depends_on": [
+        "phase0-architecture"
+      ],
+      "soft_after": [],
+      "produces": [
+        "data_model"
+      ],
+      "consumes": [
+        "architecture_diagram"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Engineering",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-data-model/model.mmd and README.md",
+        "sections": [
+          "Entities and identifiers",
+          "Relationships and cardinality",
+          "Storage and ownership"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. Entities map to the architecture, with keys and explicit cardinality; placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-roadmap",
+      "title": "Phase 0 Roadmap",
+      "level": 0,
+      "file": "playbooks/level-0/258-phase0-roadmap.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Establish milestone ids and target months before the task plan.",
+      "depends_on": [
+        "phase0-company-brief"
+      ],
+      "soft_after": [],
+      "produces": [
+        "roadmap"
+      ],
+      "consumes": [
+        "company_brief"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Strategy",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-roadmap/roadmap.json, roadmap.mmd, and README.md",
+        "sections": [
+          "Milestone ids and outcomes",
+          "Target months and playbooks",
+          "Evidence and assumptions"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. JSON and timeline agree on dated task milestones; budgets, financial lines, and placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-org-chart",
+      "title": "Phase 0 Org Chart",
+      "level": 0,
+      "file": "playbooks/level-0/259-phase0-org-chart.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Make the company's actual operator roster and mandates visible.",
+      "depends_on": [
+        "phase0-company-brief"
+      ],
+      "soft_after": [],
+      "produces": [
+        "org_chart"
+      ],
+      "consumes": [
+        "company_brief"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Operations",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-org-chart/org.mmd, agents.json, and README.md",
+        "sections": [
+          "Founder and departments",
+          "Agent mandates and playbooks",
+          "Reporting and approvals"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. Agent names match the local roster and have specific mandates; invented operators and placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-task-plan",
+      "title": "Phase 0 Task Plan",
+      "level": 0,
+      "file": "playbooks/level-0/260-phase0-task-plan.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Bind actionable tasks to roadmap milestones and existing playbooks.",
+      "depends_on": [
+        "phase0-roadmap"
+      ],
+      "soft_after": [
+        "phase0-org-chart"
+      ],
+      "produces": [
+        "task_plan"
+      ],
+      "consumes": [
+        "roadmap"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Operations",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-task-plan/plan.json and README.md",
+        "sections": [
+          "90-day task sequence",
+          "Milestone and playbook references",
+          "Evidence of completion"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. Every task references a real roadmap milestone; financial lines and placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-token-flow",
+      "title": "Phase 0 Token Flow",
+      "level": 0,
+      "file": "playbooks/level-0/261-phase0-token-flow.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [
+          "has_token"
+        ],
+        "excluded_traits": []
+      },
+      "relevance": "optional",
+      "selection_hint": "Use only for a company with the has_token trait and evidenced token use.",
+      "depends_on": [
+        "phase0-company-brief"
+      ],
+      "soft_after": [],
+      "produces": [
+        "token_flow"
+      ],
+      "consumes": [
+        "company_brief"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": false,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Product",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-token-flow/token-flow.mmd and README.md",
+        "sections": [
+          "Product actions and actors",
+          "Agent token and CAPX movement",
+          "Current versus planned"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief. Agent token and CAPX edges name actors and product triggers; unsupported mechanisms and placeholder words such as TBD or lorem ipsum fail."
+    },
+    {
+      "id": "phase0-publish",
+      "title": "Phase 0 Publish",
+      "level": 0,
+      "file": "playbooks/level-0/262-phase0-publish.md",
+      "applies_to": {
+        "types": [
+          "*"
+        ],
+        "requires_traits": [],
+        "excluded_traits": []
+      },
+      "relevance": "core",
+      "selection_hint": "Run only after local readiness and one explicit founder publication approval.",
+      "depends_on": [
+        "phase0-publish-readiness"
+      ],
+      "soft_after": [],
+      "produces": [
+        "phase0_published"
+      ],
+      "consumes": [
+        "phase0_publish_readiness"
+      ],
+      "effort": "M",
+      "leverage": "high",
+      "reversibility": "easy",
+      "human_gate": true,
+      "blocks_revenue": false,
+      "recurring": false,
+      "typical_milestone": "distribution-foundation",
+      "department": "Strategy",
+      "criticality": "core",
+      "existential_at": [
+        "idea"
+      ],
+      "model_fit": [],
+      "deliverable": {
+        "artifact": "company-brain/outputs/phase0-publish/README.md with confirmed published URLs",
+        "sections": [
+          "Reviewed face and approval scope",
+          "Published URLs",
+          "Verification and gaps"
+        ],
+        "max_words": 300
+      },
+      "rubric": "Passes only with the company name, the product's real nouns, and at least one number or fact from the brief, explicit founder approval, and confirmed URLs. Local paths passed off as URLs and placeholder words such as TBD or lorem ipsum fail."
     }
   ]
 }

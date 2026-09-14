@@ -9,6 +9,7 @@ import assert from "node:assert/strict";
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { deriveStage, validateAnswers, deriveInitialPulse } from "../scripts/stage.mjs";
+import { PHASE0_IDS } from "../scripts/router.mjs";
 import { INDEX, REPO, tmpBrain, cleanup, runScript, levelKey } from "./helpers.mjs";
 
 const BY_ID = new Map(INDEX.map((p) => [p.id, p]));
@@ -63,10 +64,9 @@ test("deriveStage: milestone flags accumulate upward but not beyond the tier", (
 });
 
 test("deriveStage: Phase 0 distribution plays are never auto-seeded", () => {
-  const PHASE0 = ["phase0-website", "phase0-one-pager", "phase0-pitch-deck", "phase0-publish-readiness"];
   for (const tier of ["landing", "building", "launched", "revenue", "scaling"]) {
     const { completed_seed } = deriveStage(answers(tier), INDEX);
-    for (const id of PHASE0) {
+    for (const id of PHASE0_IDS) {
       assert.ok(!completed_seed.includes(id), `${id} must not be seeded at ${tier}`);
     }
     assert.ok(
@@ -125,8 +125,8 @@ test("level floor: unseeded Phase 0 is catch-up without regressing the level", (
   const { dir, map } = applyAndSync("revenue");
   try {
     assert.equal(map.current_level, 5, "floor holds while Phase 0 is still open");
-    const node = map.levels.flatMap((l) => l.nodes).find((n) => n.id === "phase0-website");
-    assert.ok(node, "phase0-website stays in the build map");
+    const node = map.levels.flatMap((l) => l.nodes).find((n) => n.id === "phase0-company-brief");
+    assert.ok(node, "phase0-company-brief stays in the build map");
     assert.equal(node.status, "ready", "and surfaces as catch-up, not assumed done");
   } finally {
     cleanup(dir);

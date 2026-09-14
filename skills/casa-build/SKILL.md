@@ -69,7 +69,7 @@ build then review loop (casa-review is the other half).
 8. Mark it done. Advance the deterministic state:
 
    ```
-   node ${CASA_ROOT:-${CLAUDE_PLUGIN_ROOT}}/scripts/brain.mjs complete company-brain <id>
+   node ${CASA_ROOT:-${CLAUDE_PLUGIN_ROOT}}/scripts/brain.mjs complete company-brain <id> --agent <dispatched-operator-name>
    ```
 
    This re-renders the build map, NOW.md, and the company CLAUDE.md AUTO blocks, and

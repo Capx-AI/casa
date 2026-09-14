@@ -35,12 +35,16 @@ you a draft of the plan it is forming, so you can correct course before the fina
 tuning questions. A raw idea always starts with validation: evidence of demand and
 a clear GO or KILL before anything gets built.
 
-A new idea-stage company should also run Phase 0 (a local website,
-a one-pager, a short web deck, then publish-readiness) before or alongside those
-first validation plays. Casa does not build or host the site; the harness writes
-static files under `company-brain/outputs/`. Publish-readiness documents the gate
-and does not go live. Existing businesses keep their stage floor; incomplete Phase 0
-is catch-up, not a send-back to Level 0.
+A new idea-stage company should also run Phase 0, the company face: a company
+brief grounded in the opportunity scan, Mermaid architecture, product flow and
+data model diagrams, a roadmap, an org chart with Casa agents, and a 90-day task
+plan. Token companies can add a token flow diagram. The harness then writes the
+local website with an inline diagram, one-pager, and web deck under
+`company-brain/outputs/`. Publish-readiness checks these artifacts, and
+`node scripts/face.mjs build company-brain` assembles the local `face.json`.
+Publishing is a separate play requiring founder approval and an installed, bound
+integration. Existing businesses keep their stage floor; incomplete Phase 0 is
+catch-up, not a send-back to Level 0.
 
 **Starting with an existing business.** Casa reads your project first: the README,
 the docs, the manifests, the source. It infers what kind of business this is and

@@ -56,7 +56,7 @@ test("sync: renders build-map + NOW and rewrites the CLAUDE.md profile block", (
     assert.equal(r.code, 0, r.stderr);
     const map = JSON.parse(readFileSync(join(dir, "build-map.json"), "utf8"));
     assert.equal(map.current_level, 0);
-    assert.equal(map.member_count, 120, "Memescope selects 120 playbooks");
+    assert.equal(map.member_count, 128, "Memescope selects 128 playbooks");
     const now = readFileSync(join(dir, "NOW.md"), "utf8");
     assert.match(now, /Memescope/);
     const cm = readFileSync(join(dir, "CLAUDE.md"), "utf8");
@@ -70,10 +70,14 @@ test("sync: renders build-map + NOW and rewrites the CLAUDE.md profile block", (
 test("complete: finishing all level-0 work advances the company to level 1", () => {
   const dir = initMeme();
   try {
-    const r = runScript("brain.mjs", ["complete", dir, ...MEME_L0]);
+    const r = runScript("brain.mjs", ["complete", dir, ...MEME_L0, "--agent", "casa-strategist"]);
     assert.equal(r.code, 0, r.stderr);
     const state = JSON.parse(readFileSync(join(dir, "state.json"), "utf8"));
     assert.equal(state.completed.length, MEME_L0.length);
+    const events = readFileSync(join(dir, "ledger.jsonl"), "utf8").trim().split("\n").map(JSON.parse);
+    assert.equal(events.length, MEME_L0.length);
+    assert.ok(events.every((e) => e.agent === "casa-strategist"));
+    assert.equal(runScript("brain.mjs", ["complete", dir, "mvp-scoping", "--agent"]).code, 2);
     const map = JSON.parse(readFileSync(join(dir, "build-map.json"), "utf8"));
     assert.equal(map.current_level, 1, "level advances once L0 is fully done");
     const cm = readFileSync(join(dir, "CLAUDE.md"), "utf8");

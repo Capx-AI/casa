@@ -55,7 +55,7 @@ department is a pure FILTER over it, never its own ranker.
 5. Serial-commit the passing drafts one at a time through the sole writer:
 
    ```
-   node ${CASA_ROOT:-${CLAUDE_PLUGIN_ROOT}}/scripts/brain.mjs complete company-brain <nodeId>
+   node ${CASA_ROOT:-${CLAUDE_PLUGIN_ROOT}}/scripts/brain.mjs complete company-brain <nodeId> --agent <dispatched-operator-name>
    ```
 
 6. Re-sync and report in plain words: what got done in this function, what remains and

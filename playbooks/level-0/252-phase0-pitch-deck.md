@@ -23,7 +23,7 @@ soft_after:
   - phase0-website
 produces:
   - phase0_pitch_deck
-consumes: []
+consumes: [company_brief]
 effort: M
 leverage: high
 reversibility: easy
@@ -57,7 +57,8 @@ The harness writes static files locally.
 
 ## Procedure
 
-1. Read `company-brain/profile.json`. If `company-brain/outputs/phase0-website/`
+1. Read `company-brain/outputs/phase0-company-brief/brief.md` and
+   `company-brain/profile.json`. If `company-brain/outputs/phase0-website/`
    exists, reuse its name, one-liner, logo, and colors. If a one-pager exists,
    keep the offer language consistent.
 2. Write an HTML deck under `company-brain/outputs/phase0-pitch-deck/`. Each

@@ -78,7 +78,7 @@ in the COMMITTING (one writer, cheap), so the company brain can never be corrupt
    guarded; it refuses any node that is not engine-ready):
 
    ```
-   node ${CASA_ROOT:-${CLAUDE_PLUGIN_ROOT}}/scripts/brain.mjs complete company-brain <nodeId>
+   node ${CASA_ROOT:-${CLAUDE_PLUGIN_ROOT}}/scripts/brain.mjs complete company-brain <nodeId> --agent <dispatched-operator-name>
    ```
 
 6. Re-sync and report the wave outcome in plain words: what was drafted, what passed

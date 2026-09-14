@@ -4,7 +4,7 @@ title: Phase 0 Publish Readiness
 level: 0
 summary: >-
   Check that name, description, logo, category, and local website, one-pager,
-  and deck versions exist, plus at least one completed Casa playbook. This play
+  and deck versions exist, plus the technical face artifacts and a completed play. This play
   documents the gate. It does not publish.
 applies_to:
   types:
@@ -16,9 +16,15 @@ department: Strategy
 criticality: core
 selection_hint: >-
   The local distribution gate for every new company. Run after the Phase 0
-  website, one-pager, and deck exist. Completing it does not go live.
+  brief, diagrams, roadmap, org chart, task plan, and collateral exist. Completing it does not go live.
 action: "Write a publish-readiness checklist from the local artifacts and stop without calling any publish API."
 depends_on:
+  - phase0-architecture
+  - phase0-product-flow
+  - phase0-data-model
+  - phase0-roadmap
+  - phase0-org-chart
+  - phase0-task-plan
   - phase0-website
   - phase0-one-pager
   - phase0-pitch-deck
@@ -26,6 +32,12 @@ soft_after: []
 produces:
   - phase0_publish_readiness
 consumes:
+  - architecture_diagram
+  - product_flow
+  - data_model
+  - roadmap
+  - org_chart
+  - task_plan
   - phase0_website
   - phase0_one_pager
   - phase0_pitch_deck
@@ -44,12 +56,13 @@ deliverable:
   sections:
     - Name, description, logo, and category
     - Local website, one-pager, and deck versions with paths
+    - Brief, technical artifacts, and successful face manifest build
     - At least one completed Casa playbook with a real outputs/ artifact
     - Explicit non-publish statement
   max_words: 600
 rubric: >-
   Passes only when every checklist item is present on disk (name, description,
-  logo, category, website, one-pager, deck, and at least one completed playbook
+  logo, category, brief, diagrams, roadmap, org chart, task plan, collateral, and a completed playbook
   artifact), each path is real, and the write-up states that this play did not
   publish and that going public still requires an explicit founder-controlled
   deployment.
@@ -79,11 +92,21 @@ dial can auto-publish.
    - Website: `company-brain/outputs/phase0-website/index.html` exists.
    - One-pager: `company-brain/outputs/phase0-one-pager/index.html` exists.
    - Deck: `company-brain/outputs/phase0-pitch-deck/index.html` exists.
+   - Brief: `company-brain/outputs/phase0-company-brief/brief.md` names this company.
+   - Technical artifacts: architecture, product flow, data model, roadmap, org chart,
+     and task plan exist at their playbook output paths, with companion READMEs.
+   - Every `.mmd` starts on its first line with `flowchart`, `sequenceDiagram`,
+     `journey`, `erDiagram`, `timeline`, or `C4Context`, with no fences, at most 20 KB.
+   - `roadmap.json`, `plan.json`, and `agents.json` parse as arrays; task milestone
+     ids exist in the roadmap and non-null playbook ids exist in the catalog.
+   - Website: a diagram is rendered inline and relative one-pager and deck links resolve.
+   - `node scripts/face.mjs build company-brain` succeeds and its required face
+     fields are populated. A successful partial build alone is not readiness.
    - At least one completed Casa playbook: `company-brain/state.json` lists a
      completed id whose `company-brain/outputs/<id>/` folder contains a real
      artifact. The three Phase 0 artifacts count once they exist.
 
-3. Write `company-brain/outputs/phase0-publish-readiness/CHECKLIST.md` with pass
+3. Write `company-brain/outputs/phase0-publish-readiness/README.md` with pass
    or fail per item, the path used as evidence, and any gap. If any required
    item fails, stop and send the founder back to the missing play. Do not mark
    this node done on a partial checklist.

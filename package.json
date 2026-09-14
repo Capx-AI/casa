@@ -1,6 +1,6 @@
 {
   "name": "capx-casa",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -25,7 +25,8 @@
     "caf:legality": "node scripts/caf/legality.mjs",
     "caf:lint": "node caf/lint.mjs",
     "caf:check": "node caf/check.mjs",
-    "attest": "node scripts/brain.mjs attest"
+    "attest": "node scripts/brain.mjs attest",
+    "face": "node scripts/face.mjs"
   },
   "devDependencies": {
     "js-yaml": "^5.4.1"

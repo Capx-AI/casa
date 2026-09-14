@@ -5,7 +5,7 @@
 //
 //   node scripts/brain.mjs init     <brainDir>
 //   node scripts/brain.mjs sync     <brainDir>
-//   node scripts/brain.mjs complete <brainDir> <playbook-id> [<id> ...]
+//   node scripts/brain.mjs complete <brainDir> <playbook-id> [<id> ...] [--agent <name>]
 //   node scripts/brain.mjs waiting  <brainDir> <playbook-id> <reason...>
 //   node scripts/brain.mjs unwait   <brainDir> <playbook-id>
 //   node scripts/brain.mjs grade    <brainDir> <playbook-id> <score> <true|false> '<gapsJson>'
@@ -278,7 +278,7 @@ function init(dir) {
   }
 }
 
-function complete(dir, ids) {
+function complete(dir, ids, agent) {
   const state = readState(dir);
   const known = new Map(playbooks().map((p) => [p.id, p]));
   const unknown = ids.filter((id) => !known.has(id));
@@ -297,7 +297,7 @@ function complete(dir, ids) {
     const p = known.get(id);
     const outputs = join("outputs", id);
     const artifact = existsSync(join(dir, outputs, "README.md")) ? join(outputs, "README.md") : undefined;
-    appendEvent(dir, { kind: "playbook", node_id: id, task: p.title, status: "done", dept: p.department, artifact });
+    appendEvent(dir, { kind: "playbook", node_id: id, task: p.title, status: "done", dept: p.department, artifact, agent });
   }
 
   const r = sync(dir);
@@ -360,7 +360,17 @@ const [cmd, dir, ...rest] = process.argv.slice(2);
 if (!cmd || !dir) { console.error("usage: brain.mjs init|sync|complete|waiting|unwait|loop-ran|priority-ran|experiment|grade|attest|due <brainDir> [args...]"); process.exit(2); }
 if (cmd === "init") init(dir);
 else if (cmd === "sync") { const r = sync(dir); console.log(`synced: level ${r.level}, ${r.completed} done, ${r.member_count} playbooks. Next: ${r.top ? r.top.title : "(none)"}`); }
-else if (cmd === "complete") { if (!rest.length) { console.error("complete needs at least one playbook id"); process.exit(2); } complete(dir, rest); }
+else if (cmd === "complete") {
+  const flag = rest.indexOf("--agent");
+  let agent;
+  if (flag !== -1) {
+    agent = rest[flag + 1];
+    if (!agent?.trim() || agent.startsWith("--")) { console.error("complete: --agent needs a name"); process.exit(2); }
+    rest.splice(flag, 2);
+  }
+  if (!rest.length) { console.error("complete needs at least one playbook id"); process.exit(2); }
+  complete(dir, rest, agent);
+}
 else if (cmd === "loop-ran") { if (!rest.length) { console.error("loop-ran needs a loop id"); process.exit(2); } const s = readState(dir); s.loops = s.loops || {}; s.loops[rest[0]] = today(); writeState(dir, s); sync(dir); console.log(`loop ${rest[0]} marked run ${today()}`); }
 else if (cmd === "priority-ran") { const s = readState(dir); s.last_priority = today(); writeState(dir, s); sync(dir); console.log(`priority re-evaluated ${today()}`); }
 else if (cmd === "experiment") { if (!rest.length) { console.error("experiment needs a JSON record"); process.exit(2); } const rec = JSON.parse(rest.join(" ")); rec.logged = today(); appendFileSync(join(dir, "experiments.jsonl"), JSON.stringify(rec) + "\n"); console.log(`logged experiment ${rec.id || "(unnamed)"} ${today()}`); }
