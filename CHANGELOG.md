@@ -2,6 +2,13 @@
 
 ## 0.3.0
 
+- Restored the `capx/` seam (bind, publish, autopush, register, profile, visibility,
+  artifacts, briefs, terminal-code) as the only network path, with the fork guarantee
+  enforced by `scripts/check-plugin.mjs`: nothing outside `capx/` imports it, and
+  `rm -rf capx/ && npm run check` stays green.
+- `capx/publish.mjs face` pushes `company-brain/face.json`; `capx/autopush.mjs` pushes it
+  after every attest push. The Claude Code `SessionEnd` hook returns, guarded on `capx/`
+  and a bind receipt.
 - Added level-0 plays `phase0-company-brief`, `phase0-architecture`,
   `phase0-product-flow`, `phase0-data-model`, `phase0-roadmap`, `phase0-org-chart`,
   `phase0-task-plan`, optional `phase0-token-flow`, and approval-gated `phase0-publish`.

@@ -41,7 +41,7 @@ node capx/publish.mjs deck --dir company-brain/outputs/phase0-pitch-deck --brain
 node capx/publish.mjs face --brain company-brain
 ```
 
-The publish commands only work when the separate `capx/` integration is present
+The publish commands only work when `capx/` is present
 and the brain is bound through `company-brain/capx-bind.json`. Casa core includes
 no publishing client. If the integration or binding is missing, keep the local
 artifacts and leave publication open. Record confirmed URLs and approval scope
