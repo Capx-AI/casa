@@ -29,6 +29,6 @@
     "face": "node scripts/face.mjs"
   },
   "devDependencies": {
-    "js-yaml": "^5.4.1"
+    "js-yaml": "^5.4.3"
   }
 }
